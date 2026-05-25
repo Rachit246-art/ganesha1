@@ -1,13 +1,551 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dyad-generated-app</title>
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Div Mangal Murtis - Premium, Eco-Friendly, and Traditional Ganesha Murtis. Handcrafted with devotion for over 25 years.">
+    <title>Div Mangal Murtis | Premium Ganesha Murtis</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Div Mangal Murtis Logo" class="logo-img">
+            </a>
+            <nav class="desktop-nav">
+                <a href="index.html" class="nav-active">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Services</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="why-choose-us.html">Why Us</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faq.html">FAQ</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="header-cta">
+                <a href="contact.html" class="btn-primary">Book Now</a>
+                <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+            </div>
+        </div>
+    </header>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Hero Carousel -->
+    <section class="hero" id="hero">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <div class="slide-bg" style="background-image: url('images/Herosection/slide%201.png')"></div>
+            <div class="slide-overlay" style="background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 55%, transparent 100%);"></div>
+            <div class="slide-content">
+                <div class="tagline"><i data-lucide="sparkles"></i> 100% Natural & Biodegradable</div>
+                <h1 class="slide-title">Eco-Friendly <span class="highlight">Clay</span> Ganesha</h1>
+                <p class="slide-desc">Crafted with pure Shaddu Mati (river clay) and organic water-soluble colors. Celebrate Ganeshotsav responsibly with home immersion.</p>
+                <div class="slide-actions">
+                    <a href="#inquiry" class="btn-primary btn-large" onclick="selectMurti('Eco-Friendly Clay Ganesha')">Book Clay Murti</a>
+                    <a href="#gallery" class="btn-secondary btn-large">View 3 Types</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('images/Herosection/slide%202.png')"></div>
+            <div class="slide-overlay" style="background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 55%, transparent 100%);"></div>
+            <div class="slide-content">
+                <div class="tagline"><i data-lucide="sparkles"></i> Majestic & Traditional Designs</div>
+                <h1 class="slide-title">Traditional <span class="highlight">Ornate</span> Ganesha</h1>
+                <p class="slide-desc">Inspired by the legendary Lalbaugcha Raja and Dagdusheth Halwai. Adorned with intricate hand-painted ornaments and a royal crown.</p>
+                <div class="slide-actions">
+                    <a href="#inquiry" class="btn-primary btn-large" onclick="selectMurti('Traditional Ornate Ganesha')">Book Ornate Murti</a>
+                    <a href="#gallery" class="btn-secondary btn-large">View 3 Types</a>
+                </div>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="slide">
+            <div class="slide-bg" style="background-image: url('images/Herosection/slide%203.png')"></div>
+            <div class="slide-overlay" style="background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 55%, transparent 100%);"></div>
+            <div class="slide-content">
+                <div class="tagline"><i data-lucide="sparkles"></i> Elegant & Everlasting Grace</div>
+                <h1 class="slide-title">Premium <span class="highlight">Marble</span> Finish Ganesha</h1>
+                <p class="slide-desc">Exquisite white marble-look finish with subtle gold leaf detailing. Perfect for home temples, offices, and lifelong devotion.</p>
+                <div class="slide-actions">
+                    <a href="#inquiry" class="btn-primary btn-large" onclick="selectMurti('Premium Marble Finish Ganesha')">Book Marble Murti</a>
+                    <a href="#gallery" class="btn-secondary btn-large">View 3 Types</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="nav-arrow prev-arrow" id="prev-slide" aria-label="Previous slide">
+            <i data-lucide="chevron-left"></i>
+        </button>
+        <button class="nav-arrow next-arrow" id="next-slide" aria-label="Next slide">
+            <i data-lucide="chevron-right"></i>
+        </button>
+        <div class="slide-indicators" id="slide-indicators">
+            <div class="indicator active" data-index="0"></div>
+            <div class="indicator" data-index="1"></div>
+            <div class="indicator" data-index="2"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="bg-decor top-left"></div>
+        <div class="bg-decor bottom-right"></div>
+        <div class="container relative z-10">
+            <div class="section-header">
+                <span class="subtitle">What We Offer</span>
+                <h2>Our Sacred Services</h2>
+                <div class="divider"></div>
+                <p class="desc">We combine ancient sculpting traditions with modern eco-conscious practices to deliver the most beautiful and divine Ganesha idols for your celebrations.</p>
+            </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card group">
+                    <img src="images/our services/Eco-friendly.png" alt="Eco-Friendly Clay Murtis" class="service-card-img">
+                    <div class="service-card-body">
+                        <div class="service-header">
+                            <div class="icon-box"><i data-lucide="leaf"></i></div>
+                            <span class="badge">Most Popular</span>
+                        </div>
+                        <h3>Eco-Friendly Clay Murtis</h3>
+                        <p>Crafted using 100% natural Shaddu Mati (clay) and organic, non-toxic water-soluble colors. Safe for home immersion and environment-friendly.</p>
+                        <div class="learn-more">Learn more &rarr;</div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card group">
+                    <img src="images/our services/custom murti.png" alt="Custom Murti Sculpting" class="service-card-img">
+                    <div class="service-card-body">
+                        <div class="service-header">
+                            <div class="icon-box"><i data-lucide="sparkles"></i></div>
+                            <span class="badge">Premium Service</span>
+                        </div>
+                        <h3>Custom Murti Sculpting</h3>
+                        <p>Work directly with our master artisans to design a custom Ganesha idol. Choose specific poses, expressions, ornaments, and color themes.</p>
+                        <div class="learn-more">Learn more &rarr;</div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card group">
+                    <img src="images/our services/Restoring.png" alt="Restoration & Repainting" class="service-card-img">
+                    <div class="service-card-body">
+                        <div class="service-header">
+                            <div class="icon-box"><i data-lucide="paintbrush"></i></div>
+                            <span class="badge">Expert Care</span>
+                        </div>
+                        <h3>Restoration & Repainting</h3>
+                        <p>Breathe new life into your cherished family heirloom Ganesha idols. We offer professional restoration, repair, and premium gold-leaf detailing.</p>
+                        <div class="learn-more">Learn more &rarr;</div>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card group">
+                    <img src="images/our services/Safe Transit &amp; home setup.png" alt="Safe Transit & Home Setup" class="service-card-img">
+                    <div class="service-card-body">
+                        <div class="service-header">
+                            <div class="icon-box"><i data-lucide="truck"></i></div>
+                            <span class="badge">Guaranteed Safe</span>
+                        </div>
+                        <h3>Safe Transit & Home Setup</h3>
+                        <p>We ensure your divine idol reaches your home or pandal in pristine condition with specialized shock-absorbent packaging and delivery.</p>
+                        <div class="learn-more">Learn more &rarr;</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="tb-icon"><i data-lucide="shield-check"></i></div>
+                    <h4>100% Safe Delivery</h4>
+                    <p>Insured transit with custom wooden crates</p>
+                </div>
+                <div class="trust-badge">
+                    <div class="tb-icon"><i data-lucide="leaf"></i></div>
+                    <h4>Eco-Friendly Materials</h4>
+                    <p>Pure clay & organic plant-based colors</p>
+                </div>
+                <div class="trust-badge">
+                    <div class="tb-icon"><i data-lucide="heart"></i></div>
+                    <h4>Artisan Support</h4>
+                    <p>Directly empowering traditional sculptors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-choose-us" class="why-choose-us dark-section">
+        <div class="dot-pattern-bg"></div>
+        <div class="container relative z-10">
+            <div class="wcu-grid">
+                <div class="wcu-image-col">
+                    <div class="image-wrapper">
+                        <img src="images/our legacy.png" alt="Artisan crafting Ganesha Murti">
+                        <div class="floating-badge">
+                            <div class="fb-icon"><i data-lucide="award"></i></div>
+                            <div class="fb-text">
+                                <p class="fb-subtitle">Legacy of Devotion</p>
+                                <h4>Over 25 Years of Crafting Divinity</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wcu-content">
+                    <span class="subtitle text-amber">Our Legacy</span>
+                    <h2>Why Devotees Choose Our Murtis</h2>
+                    <div class="divider bg-amber"></div>
+                    <p class="desc text-stone-300">Every Ganesha idol we create is not just a sculpture; it is a labor of love, devotion, and meticulous artistry. We ensure that your spiritual celebrations are elevated with pure, beautiful, and authentic craftsmanship.</p>
+                    
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i data-lucide="check-circle-2" class="text-amber"></i>
+                            <div>
+                                <h4>Master Sculptors & Artisans</h4>
+                                <p>Our team consists of third-generation artisans who specialize in traditional clay sculpting and intricate hand-painting.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i data-lucide="check-circle-2" class="text-amber"></i>
+                            <div>
+                                <h4>Strict Eco-Friendly Standards</h4>
+                                <p>We strictly use pure Shaddu Mati clay and natural colors, ensuring zero harm to marine life during immersion.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i data-lucide="check-circle-2" class="text-amber"></i>
+                            <div>
+                                <h4>Customization & Attention to Detail</h4>
+                                <p>From the serene expression of the eyes to the intricate folds of the pitambar, we customize every detail to match your vision.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-num">10k+</span>
+                            <span class="stat-label">Happy Homes</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">Eco-Friendly</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-num">50+</span>
+                            <span class="stat-label">Artisans</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Murti Gallery -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="subtitle">Our Three Sacred Creations</span>
+                <h2>The Three Divine Types</h2>
+                <div class="divider mx-auto"></div>
+                <p class="desc mx-auto max-w-3xl">We specialize exclusively in crafting three premium styles of Ganesha Ji idols. Select your preferred style to book or customize.</p>
+            </div>
+
+            <!-- Gallery Filter Tabs -->
+            <div class="filter-tabs" style="margin-bottom:2.5rem; text-align:center;">
+                <button class="filter-btn active" data-filter="all">All Types</button>
+                <button class="filter-btn" data-filter="eco">Eco-Friendly Clay</button>
+                <button class="filter-btn" data-filter="ornate">Traditional Ornate</button>
+                <button class="filter-btn" data-filter="marble">Marble Finish</button>
+            </div>
+
+            <div id="gallery-grid" class="img-mosaic img-mosaic-3">
+                <div class="gallery-card" data-category="eco">
+                    <img src="images/our services/Eco-friendly.png" alt="Eco-Friendly Clay Ganesha">
+                    <div class="gallery-card-label">Eco-Friendly Clay Ganesha</div>
+                </div>
+                <div class="gallery-card" data-category="ornate">
+                    <img src="images/our services/custom murti.png" alt="Traditional Ornate Ganesha">
+                    <div class="gallery-card-label">Traditional Ornate Ganesha</div>
+                </div>
+                <div class="gallery-card" data-category="marble">
+                    <img src="images/our services/Restoring.png" alt="Premium Marble Finish Ganesha">
+                    <div class="gallery-card-label">Premium Marble Finish Ganesha</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials dark-section">
+        <div class="bg-decor top-right"></div>
+        <div class="container relative z-10">
+            <div class="section-header text-center">
+                <span class="subtitle text-amber">Devotee Stories</span>
+                <h2>Blessed Experiences</h2>
+                <div class="divider bg-amber mx-auto"></div>
+                <p class="desc text-stone-300 mx-auto max-w-3xl">Read how our beautifully crafted Ganesha idols have brought joy, peace, and divine energy to thousands of homes.</p>
+            </div>
+
+            <div class="testi-grid">
+                <!-- Testimonial 1 -->
+                <div class="testi-card">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <div class="stars">
+                        <i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i>
+                    </div>
+                    <p class="testi-text">"We ordered the 2.5 feet Dagdusheth style Ganesha last year. The detailing on the crown and the serene expression on Bappa's face brought tears of joy to our family. Truly divine craftsmanship!"</p>
+                    <div class="testi-user">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" alt="Aniket Deshmukh">
+                        <div>
+                            <h4>Aniket Deshmukh</h4>
+                            <span>Pune Devotee</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testi-card">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <div class="stars">
+                        <i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i>
+                    </div>
+                    <p class="testi-text">"The Tree Ganesha is a brilliant concept! The immersion was done in a pot on our balcony, and now we have a beautiful flowering plant growing from the clay. Highly recommend their eco-friendly idols."</p>
+                    <div class="testi-user">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80" alt="Priya Kulkarni">
+                        <div>
+                            <h4>Priya Kulkarni</h4>
+                            <span>Eco-Conscious Homemaker</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testi-card">
+                    <i data-lucide="quote" class="quote-icon"></i>
+                    <div class="stars">
+                        <i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i>
+                    </div>
+                    <p class="testi-text">"Outstanding service! They customized a 4-feet idol for our society pandal. The packaging was extremely secure, and they delivered it right on time with absolute care. Will book again!"</p>
+                    <div class="testi-user">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80" alt="Sanjay Mehta">
+                        <div>
+                            <h4>Sanjay Mehta</h4>
+                            <span>Mandal Coordinator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section id="inquiry" class="inquiry-section">
+        <div class="bg-decor center-left"></div>
+        <div class="bg-decor bottom-right"></div>
+        
+        <div class="container relative z-10">
+            <div class="inquiry-container">
+                <div class="inquiry-info">
+                    <div class="dot-pattern-bg"></div>
+                    <div class="relative z-10">
+                        <div class="icon-box-amber"><i data-lucide="sparkles"></i></div>
+                        <h2>Book Your Divine Blessing</h2>
+                        <p>Fill out the form to reserve your Ganesha idol or request a custom design. Our master artisans will get in touch with you to discuss details, colors, and delivery.</p>
+                    </div>
+                    <div class="promises mt-auto relative z-10">
+                        <div class="promise"><i data-lucide="check-circle" class="text-amber"></i> 100% Refundable booking deposit</div>
+                        <div class="promise"><i data-lucide="check-circle" class="text-amber"></i> Video updates during sculpting process</div>
+                        <div class="promise"><i data-lucide="check-circle" class="text-amber"></i> Eco-friendly immersion guide included</div>
+                    </div>
+                </div>
+                
+                <div class="inquiry-form-wrapper">
+                    <div id="success-message" class="hidden success-message text-center">
+                        <div class="success-icon"><i data-lucide="check-circle"></i></div>
+                        <h3>Thank You, Devotee!</h3>
+                        <p>Your booking inquiry has been received. Our master artisan will call you within 24 hours to finalize your Ganesha Murti details.</p>
+                        <button class="btn-secondary mt-4" onclick="resetForm()">Submit Another Inquiry</button>
+                    </div>
+
+                    <form id="booking-form" onsubmit="submitForm(event)">
+                        <div class="form-header">
+                            <h3>Inquiry & Customization Form</h3>
+                            <p>Please provide your details and preferences below.</p>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" id="name" required placeholder="e.g. Rajesh Kumar">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="phone" required placeholder="e.g. +91 98765 43210">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="email" required placeholder="e.g. rajesh@example.com">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Murti Style / Type</label>
+                                <select id="murtiType">
+                                    <option value="Eco-Friendly Clay Ganesha">Eco-Friendly Clay Ganesha</option>
+                                    <option value="Traditional Ornate Ganesha">Traditional Ornate Ganesha</option>
+                                    <option value="Premium Marble Finish Ganesha">Premium Marble Finish Ganesha</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Preferred Size</label>
+                                <select id="size">
+                                    <option value="1 Foot to 1.5 Feet">1 Foot to 1.5 Feet</option>
+                                    <option value="2 Feet">2 Feet (Standard Home)</option>
+                                    <option value="2.5 Feet">2.5 Feet</option>
+                                    <option value="3 Feet">3 Feet</option>
+                                    <option value="4 Feet+">4 Feet+ (Pandal / Community)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Custom Requirements / Notes</label>
+                            <textarea id="notes" rows="3" placeholder="Describe any specific colors, poses, ornaments, or custom requests..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary w-full justify-center">
+                            <i data-lucide="send"></i> Submit Booking Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-gradient"></div>
+        <div class="container relative z-10">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="Div Mangal Murtis Logo" class="logo-img logo-img-footer">
+                    </div>
+                    <p>Crafting premium, eco-friendly, and traditional Ganesha idols with absolute devotion and master craftsmanship for over 25 years.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#why-choose-us">Why Choose Us</a></li>
+                        <li><a href="#gallery">Murti Gallery</a></li>
+                        <li><a href="#inquiry">Book / Inquire</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i data-lucide="map-pin" class="text-amber"></i> <span>102, Artisan Plaza, Near Dagdusheth Temple, Pune - 411002</span></li>
+                        <li><i data-lucide="phone" class="text-amber"></i> <span>+91 98765 43210</span></li>
+                        <li><i data-lucide="mail" class="text-amber"></i> <span>info@moryaarts.com</span></li>
+                    </ul>
+                </div>
+
+                <div class="footer-hours">
+                    <h4>Workshop Hours</h4>
+                    <p>Monday - Sunday: 9:00 AM - 9:00 PM</p>
+                    <p class="italic text-amber-dim">*Visitors are welcome to witness the live sculpting process at our workshop.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Div Mangal Murtis. All rights reserved.</p>
+                <p class="made-with">Made with <i data-lucide="heart" class="text-red fill-red"></i> for Ganpati Bappa Devotees</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals (Hidden by default) -->
+    <div id="modal-1" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('modal-1')">&times;</button>
+            <img src="https://images.unsplash.com/photo-1609137144814-9d998069696d?auto=format&fit=crop&w=800&q=80" alt="Eco-Friendly Clay Ganesha" class="modal-img">
+            <div class="modal-body">
+                <div class="modal-header-flex">
+                    <div>
+                        <span class="modal-category text-amber">100% Biodegradable</span>
+                        <h3>Eco-Friendly Clay Ganesha</h3>
+                    </div>
+                    <span class="price-badge">Eco-Friendly Choice</span>
+                </div>
+                <p>Handcrafted using pure river clay and organic, non-toxic water-soluble colors. Dissolves completely in water within hours, leaving zero environmental footprint.</p>
+                <div class="modal-meta">
+                    <div><span class="label">Available Sizes</span> <strong>1.5 Feet to 3 Feet</strong></div>
+                    <div><span class="label">Material Used</span> <strong>Shaddu Mati (River Clay)</strong></div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-primary flex-1 justify-center" onclick="closeModal('modal-1'); selectMurti('Eco-Friendly Clay Ganesha'); window.location.href='#inquiry';">Book / Inquire for this Murti</button>
+                    <button class="btn-secondary" onclick="closeModal('modal-1')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal-2" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('modal-2')">&times;</button>
+            <img src="https://images.unsplash.com/photo-1630260579111-799969997c90?auto=format&fit=crop&w=800&q=80" alt="Traditional Ornate Ganesha" class="modal-img">
+            <div class="modal-body">
+                <div class="modal-header-flex">
+                    <div>
+                        <span class="modal-category text-amber">Royal & Majestic</span>
+                        <h3>Traditional Ornate Ganesha</h3>
+                    </div>
+                    <span class="price-badge">Most Popular</span>
+                </div>
+                <p>Inspired by the iconic Lalbaugcha Raja and Dagdusheth Halwai. Features rich, vibrant hand-painted ornaments, a majestic crown, and traditional saffron robes.</p>
+                <div class="modal-meta">
+                    <div><span class="label">Available Sizes</span> <strong>2 Feet to 4 Feet</strong></div>
+                    <div><span class="label">Material Used</span> <strong>Premium Clay & Gold Detailing</strong></div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-primary flex-1 justify-center" onclick="closeModal('modal-2'); selectMurti('Traditional Ornate Ganesha'); window.location.href='#inquiry';">Book / Inquire for this Murti</button>
+                    <button class="btn-secondary" onclick="closeModal('modal-2')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal-3" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('modal-3')">&times;</button>
+            <img src="https://images.unsplash.com/photo-1567591910360-697e50743726?auto=format&fit=crop&w=800&q=80" alt="Premium Marble Finish Ganesha" class="modal-img">
+            <div class="modal-body">
+                <div class="modal-header-flex">
+                    <div>
+                        <span class="modal-category text-amber">Everlasting Grace</span>
+                        <h3>Premium Marble Finish Ganesha</h3>
+                    </div>
+                    <span class="price-badge">Exclusive Masterpiece</span>
+                </div>
+                <p>An elegant, pristine white marble-look finish with subtle gold leaf highlights. Designed for lifelong devotion in home temples, offices, or as a sacred gift.</p>
+                <div class="modal-meta">
+                    <div><span class="label">Available Sizes</span> <strong>1 Foot to 2.5 Feet</strong></div>
+                    <div><span class="label">Material Used</span> <strong>Premium Cultured Marble</strong></div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn-primary flex-1 justify-center" onclick="closeModal('modal-3'); selectMurti('Premium Marble Finish Ganesha'); window.location.href='#inquiry';">Book / Inquire for this Murti</button>
+                    <button class="btn-secondary" onclick="closeModal('modal-3')">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
