@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { CheckCircle2, Award, Users, Sparkles, Flame } from 'lucide-react';
+import { CheckCircle2, Award } from 'lucide-react';
 
 export default function WhyChooseUs() {
   return (
@@ -16,7 +16,7 @@ export default function WhyChooseUs() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden border-4 border-amber-500/30 shadow-2xl">
               <img 
-                src="https://images.unsplash.com/photo-1567591910360-697e50743726?auto=format&fit=crop&w=800&q=80" 
+                src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=800&q=80" 
                 alt="Artisan crafting Ganesha Murti" 
                 className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
               />

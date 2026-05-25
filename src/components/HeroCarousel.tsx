@@ -1,18 +1,18 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Sparkles, Calendar } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 
 const slides = [
   {
-    image: "https://images.unsplash.com/photo-1609137144814-9d998069696d?auto=format&fit=crop&w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1567591910360-697e50743726?auto=format&fit=crop&w=1920&q=80",
     tagline: "Divine Craftsmanship & Devotion",
     title: "Exquisite Ganpati Murtis",
     description: "Handcrafted with love, devotion, and absolute perfection by master artisans. Bring home the divine presence this festive season.",
     cta: "Explore Collection"
   },
   {
-    image: "https://images.unsplash.com/photo-1567591910360-697e50743726?auto=format&fit=crop&w=1920&q=80",
+    image: "https://images.unsplash.com/photo-1609137144814-9d998069696d?auto=format&fit=crop&w=1920&q=80",
     tagline: "100% Eco-Friendly & Pure",
     title: "Shaddu Mati Clay Murtis",
     description: "Celebrate responsibly with our completely biodegradable clay idols painted with natural organic colors that dissolve beautifully in water.",
@@ -67,7 +67,7 @@ export default function HeroCarousel({ onCtaClick }: HeroCarouselProps) {
               transform: index === current ? 'scale(1)' : 'scale(1.05)'
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-stone-950" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-stone-950" />
 
           {/* Content */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8 z-20">

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Eye, Sparkles, Filter, Info } from 'lucide-react';
+import { Eye } from 'lucide-react';
 
 const categories = ["All", "Eco-Friendly Clay", "Premium Marble Look", "Traditional Saffron", "Miniature Shrines"];
 
