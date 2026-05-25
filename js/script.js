@@ -198,3 +198,65 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+// Lightbox Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Create Lightbox DOM elements
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <button class="lightbox-close">&times;</button>
+        <img class="lightbox-content" src="" alt="">
+    `;
+    document.body.appendChild(lightbox);
+
+    const lightboxImg = lightbox.querySelector('.lightbox-content');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+    // Add click event to all images that should be in the lightbox
+    // We target product images and gallery images
+    const triggerImages = document.querySelectorAll('.gallery-card img, .img-mosaic img, .product-card img, .gc-image img');
+    triggerImages.forEach(img => {
+        img.classList.add('lightbox-trigger');
+        img.addEventListener('click', (e) => {
+            e.preventDefault(); // prevent other click events if any
+            lightboxImg.src = img.src;
+            lightbox.classList.add('active');
+        });
+    });
+
+    // Close lightbox
+    lightboxClose.addEventListener('click', () => {
+        lightbox.classList.remove('active');
+    });
+    
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            lightbox.classList.remove('active');
+        }
+    });
+
+    // Products Filtering Logic
+    const prodFilters = document.querySelectorAll('.prod-filter-btn');
+    const prodCards = document.querySelectorAll('.prod-item');
+    if(prodFilters.length > 0) {
+        prodFilters.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class
+                prodFilters.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                prodCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+});
