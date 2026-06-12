@@ -1,127 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogs – Div Mangal Murtis</title>
-  <meta name="description" content="Read our latest articles and updates.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/inner.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
-</head>
-<body>
-    <!-- CUSTOM CURSOR -->
-    <div class="cursor-dot d-none d-lg-block"></div>
-    <div class="cursor-outline d-none d-lg-block"></div>
+import re
+import os
 
+file_path = "c:/Users/MSI/OneDrive/Desktop/Ganpatijii/ganpatijii/index.html"
+with open(file_path, "r", encoding="utf-8") as f:
+    content = f.read()
 
-  <!-- ── HEADER ──────────────────────────────────────────── -->
-  <header class="header">
-    <div class="container header-container">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="Div Mangal Murtis Logo" class="logo-img">
-      </a>
-            <nav class="desktop-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="why-choose-us.html">Why Us</a>
-        <a href="products.html">Our Products</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="blogs.html" class="nav-active">Blogs</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <div class="header-cta">
-        <a href="contact.html" class="btn-primary">Book Now</a><button class="mobile-menu-btn"><i data-lucide="menu"></i></button></div>
-    </div>
-  </header>
+# 1. Hero Image Fix
+# Change background-size: cover to contain, or keep cover and use background-position: top center
+content = content.replace('background-position: center;', 'background-position: top center;')
 
-  <!-- ── PAGE HERO ────────────────────────────────────────── -->
-  <section class="page-hero" style="background-image: url('images/our legacy.png');">
-    <div class="page-hero-overlay"></div>
-    <div class="container page-hero-content">
-      <span class="subtitle">Insights & Updates</span>
-      <h1 class="page-hero-title">Our <span class="text-amber">Blog</span></h1>
-      <p class="page-hero-desc">Discover stories of devotion, artistry, and sustainability</p>
-    </div>
-  </section>
-
-  <!-- ── BLOGS SECTION ─────────────────────────────────────────── -->
-  <section class="ip-section bg-light">
-    <div class="container">
-      
-      <div class="section-header text-center">
-        <h2 class="ip-title">Latest Articles</h2>
-        <div class="divider mx-auto"></div>
-      </div>
-
-    
-    
-        <div class="container relative z-10">
-            <div class="section-header text-center">
-                <span class="subtitle-pill">[ LATEST INSIGHTS ]</span>
-                <h2>Our <span class="heading-accent">Blogs</span></h2>
-                <div class="divider mx-auto"></div>
-            </div>
-            
-            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div class="service-card group">
-                    <img src="images/our services/Eco-friendly.png" alt="Eco-friendly Visarjan" class="service-card-img">
-                    <div class="service-card-body">
-                        <h3>The Importance of Eco-Friendly Visarjan</h3>
-                        <p>Learn why choosing a clay Ganesha helps preserve our rivers and how you can perform a beautiful home visarjan.</p>
-                        <a href="blog-eco.html" class="learn-more">Read Full Blog &rarr;</a>
-                    </div>
-                </div>
-                <div class="service-card group">
-                    <img src="images/our services/custom murti.png" alt="Solapur Antique Style" class="service-card-img">
-                    <div class="service-card-body">
-                        <h3>Discovering the Solapur Antique Style</h3>
-                        <p>A deep dive into the rich heritage and intricate detailing of the traditional Solapur Ganesha murtis.</p>
-                        <a href="blog-antique.html" class="learn-more">Read Full Blog &rarr;</a>
-                    </div>
-                </div>
-                <div class="service-card group">
-                    <img src="images/our legacy.png" alt="Seed Ganesha" class="service-card-img">
-                    <div class="service-card-body">
-                        <h3>Grow a Plant with Seed Ganesha</h3>
-                        <p>Discover the magic of Seed Ganeshas. How a symbol of devotion transforms into a living plant in your home.</p>
-                        <a href="blog-seed.html" class="learn-more">Read Full Blog &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-
-        <p class="desc">Stay tuned! We are currently writing beautiful stories for you.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ─────────────────────────────────────────────── -->
-  <!-- Pre-Footer CTA -->
-    <section class="pre-footer-cta">
+# 2. Add Pre-Footer CTA
+pre_footer_html = """
+    <!-- Pre-Footer CTA -->
+    <section class="pre-footer-cta" style="background: linear-gradient(135deg, #d3ab79 0%, #83526a 100%); padding: 5rem 0; position: relative; overflow: hidden; color: var(--white);">
         <div class="bg-decor" style="position: absolute; top: -50%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%;"></div>
         <div class="bg-decor" style="position: absolute; bottom: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%); border-radius: 50%;"></div>
-        <div class="container relative z-10 pre-footer-content">
+        <div class="container relative z-10" style="display: flex; flex-direction: column; md:flex-row; justify-content: space-between; align-items: center; gap: 3rem;">
             <div class="cta-content" style="max-width: 600px;">
-                <span class="subtitle-pill">[ REACH OUT ]</span>
-                <h2>Ready to experience Divine <span class="heading-accent">Devotion?</span></h2>
+                <span class="subtitle" style="color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.4); padding: 5px 15px; border-radius: 99px; display: inline-block; margin-bottom: 1rem; font-size: 0.75rem; letter-spacing: 2px;">[ REACH OUT ]</span>
+                <h2 style="font-family: var(--font-serif); font-size: 3rem; font-weight: 600; margin-bottom: 1rem; line-height: 1.2;">Ready to experience Divine Devotion?</h2>
                 <p style="font-size: 1rem; opacity: 0.9; line-height: 1.6; max-width: 500px;">Book your Ganesha Murti today. Whether you need an eco-friendly clay idol or a majestic traditional centerpiece, our master artisans are ready to serve you with world-class craftsmanship and pure devotion.</p>
             </div>
-            <div class="cta-actions">
+            <div class="cta-actions" style="display: flex; gap: 1rem;">
                 <a href="#inquiry" class="btn-white-custom" style="background: white; color: #83526a; padding: 12px 30px; border-radius: 99px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">Book Now</a>
                 <a href="mailto:info@moryaarts.com" class="btn-outline-white-custom" style="background: transparent; color: white; border: 1px solid white; padding: 12px 30px; border-radius: 99px; font-weight: 600; text-decoration: none;">Email Us</a>
             </div>
         </div>
     </section>
+"""
+if "pre-footer-cta" not in content:
+    content = content.replace('<!-- Footer -->', pre_footer_html + '\n<!-- Footer -->')
 
-<!-- Footer -->
-    <footer class="footer">
+# 3. Update Footer Layout
+footer_start = content.find('<footer class="footer">')
+footer_end = content.find('</footer>', footer_start) + len('</footer>')
+
+new_footer_html = """<footer class="footer" style="background-color: #1a1410; color: #ffffff; padding: 5rem 0 2rem; position: relative;">
         <div class="container relative z-10">
-            <div class="footer-grid">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 3rem; margin-bottom: 4rem;">
                 
                 <!-- Brand Col -->
                 <div class="footer-brand">
@@ -188,23 +104,19 @@
             </div>
             
             <!-- Footer Bottom -->
-            <div class="footer-bottom">
+            <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; opacity: 0.6;">
                 <p style="margin: 0;">Div Mangal Murtis | Made with <i class="fa-solid fa-heart" style="color: var(--primary);"></i> for Ganpati Bappa Devotees</p>
-                <div class="footer-legal">
+                <div style="display: flex; gap: 2rem;">
                     <a href="#" style="color: white; text-decoration: none;">Terms and Conditions</a>
                     <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>"""
 
-  <script src="js/script.js"></script>
-  <script>lucide.createIcons();</script>
+content = content[:footer_start] + new_footer_html + content[footer_end:]
 
-    <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <i class="fa-brands fa-whatsapp" style="font-size: 35px; margin-top: 2px;"></i>
-    </a>
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(content)
 
-</body>
-</html>
+print("Updated footer and added pre-footer CTA")

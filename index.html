@@ -5,13 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Div Mangal Murtis - Premium, Eco-Friendly, and Traditional Ganesha Murtis. Handcrafted with devotion for over 25 years.">
     <title>Div Mangal Murtis | Premium Ganesha Murtis</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot d-none d-lg-block"></div>
+    <div class="cursor-outline d-none d-lg-block"></div>
+
+    <!-- PAGE LOADER -->
+    <div id="page-loader">
+      <div class="loader-inner">
+                <div class="brand-loader text-center flex flex-col items-center">
+          <img src="images/logo.png" alt="Div Mangal Murtis Logo" style="width: 250px; height: auto; margin-bottom: 1.5rem; animation: pulse 2s infinite ease-in-out; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
+        </div>
+        <div class="loader-bar"><span></span></div>
+      </div>
+    </div>
+
+    <!-- SCROLL PROGRESS -->
+    <div id="scroll-progress"></div>
+
     <!-- Header -->
     <header class="header">
         <div class="container header-container">
@@ -37,60 +56,60 @@
 
     
 <!-- Hero Carousel -->
-    <section class="hero" id="hero">
-        <!-- Slide 1 -->
-        <div class="slide active">
-            <div class="slide-bg" style="background-image: url('images/Herosection/slide%201.png')"></div>
-            <div class="slide-overlay" style="background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 55%, transparent 100%);"></div>
-            <div class="slide-content">
-                <div class="tagline"><i data-lucide="sparkles"></i> 100% Natural & Biodegradable</div>
-                <h1 class="slide-title">Eco-Friendly <span class="highlight">Clay</span> Ganesha</h1>
-                <p class="slide-desc">Crafted with pure Shaddu Mati (river clay) and organic water-soluble colors. Celebrate Ganeshotsav responsibly with home immersion.</p>
-                <div class="slide-actions">
-                    <a href="#inquiry" class="btn-primary btn-large" onclick="selectMurti('Eco-Friendly Clay Ganesha')">Book Clay Murti</a>
-                    <a href="#gallery" class="btn-secondary btn-large">View 3 Types</a>
+    <!-- Hero Carousel -->
+    <section class="hero hero-slider-section" id="hero">
+        <div class="swiper hero-swiper" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%;">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('images/Herosection/slide%201.png'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                    <div class="slide-overlay" style="background: rgba(0,0,0,0.4); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                    <div class="slide-content">
+                        <div class="tagline" style="color: var(--primary);"><i data-lucide="sparkles"></i> 100% Natural & Biodegradable</div>
+                        <h1 class="slide-title">Eco-Friendly <br><span class="hero-gradient-text highlight">Clay Ganesha</span></h1>
+                        <p class="slide-desc">Crafted with pure Shaddu Mati (river clay) and organic water-soluble colors. Celebrate Ganeshotsav responsibly with home immersion.</p>
+                        <div class="slide-actions">
+                            <a href="#inquiry" class="btn-primary-custom" onclick="selectMurti('Eco-Friendly Clay Ganesha')">Book Clay Murti <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                            <a href="#gallery" class="btn-secondary">View 3 Types</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('images/Herosection/slide%202.png'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                    <div class="slide-overlay" style="background: rgba(0,0,0,0.4); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                    <div class="slide-content">
+                        <div class="tagline" style="color: var(--primary);"><i data-lucide="sparkles"></i> Majestic & Traditional Designs</div>
+                        <h1 class="slide-title">Traditional <br><span class="hero-gradient-text highlight">Ornate Ganesha</span></h1>
+                        <p class="slide-desc">Inspired by the legendary Lalbaugcha Raja and Dagdusheth Halwai. Adorned with intricate hand-painted ornaments and a royal crown.</p>
+                        <div class="slide-actions">
+                            <a href="#inquiry" class="btn-primary-custom" onclick="selectMurti('Traditional Ornate Ganesha')">Book Ornate Murti <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                            <a href="#gallery" class="btn-secondary">View 3 Types</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <div class="slide-bg" style="background-image: url('images/Herosection/slide%203.png'); background-size: cover; background-position: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                    <div class="slide-overlay" style="background: rgba(0,0,0,0.4); position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                    <div class="slide-content">
+                        <div class="tagline" style="color: var(--primary);"><i data-lucide="sparkles"></i> Elegant & Everlasting Grace</div>
+                        <h1 class="slide-title">Premium <br><span class="hero-gradient-text highlight">Marble Finish Ganesha</span></h1>
+                        <p class="slide-desc">Exquisite white marble-look finish with subtle gold leaf detailing. Perfect for home temples, offices, and lifelong devotion.</p>
+                        <div class="slide-actions">
+                            <a href="#inquiry" class="btn-primary-custom" onclick="selectMurti('Premium Marble Finish Ganesha')">Book Marble Murti <i class="fa-solid fa-arrow-right ms-2"></i></a>
+                            <a href="#gallery" class="btn-secondary">View 3 Types</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-            <div class="slide-bg" style="background-image: url('images/Herosection/slide%202.png')"></div>
-            <div class="slide-overlay" style="background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 55%, transparent 100%);"></div>
-            <div class="slide-content">
-                <div class="tagline"><i data-lucide="sparkles"></i> Majestic & Traditional Designs</div>
-                <h1 class="slide-title">Traditional <span class="highlight">Ornate</span> Ganesha</h1>
-                <p class="slide-desc">Inspired by the legendary Lalbaugcha Raja and Dagdusheth Halwai. Adorned with intricate hand-painted ornaments and a royal crown.</p>
-                <div class="slide-actions">
-                    <a href="#inquiry" class="btn-primary btn-large" onclick="selectMurti('Traditional Ornate Ganesha')">Book Ornate Murti</a>
-                    <a href="#gallery" class="btn-secondary btn-large">View 3 Types</a>
-                </div>
-            </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="slide">
-            <div class="slide-bg" style="background-image: url('images/Herosection/slide%203.png')"></div>
-            <div class="slide-overlay" style="background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 55%, transparent 100%);"></div>
-            <div class="slide-content">
-                <div class="tagline"><i data-lucide="sparkles"></i> Elegant & Everlasting Grace</div>
-                <h1 class="slide-title">Premium <span class="highlight">Marble</span> Finish Ganesha</h1>
-                <p class="slide-desc">Exquisite white marble-look finish with subtle gold leaf detailing. Perfect for home temples, offices, and lifelong devotion.</p>
-                <div class="slide-actions">
-                    <a href="#inquiry" class="btn-primary btn-large" onclick="selectMurti('Premium Marble Finish Ganesha')">Book Marble Murti</a>
-                    <a href="#gallery" class="btn-secondary btn-large">View 3 Types</a>
-                </div>
-            </div>
-        </div>
+            
+            <!-- Navigation Arrows -->
+            <div class="hero-swiper-prev d-none d-md-block" style="position: absolute; left: 1rem; top: 50%; z-index: 20; color: white; cursor: pointer;"><i class="fa-solid fa-chevron-left fa-2x"></i></div>
+            <div class="hero-swiper-next d-none d-md-block" style="position: absolute; right: 1rem; top: 50%; z-index: 20; color: white; cursor: pointer;"><i class="fa-solid fa-chevron-right fa-2x"></i></div>
 
-        <button class="nav-arrow prev-arrow" id="prev-slide" aria-label="Previous slide">
-            <i data-lucide="chevron-left"></i>
-        </button>
-        <button class="nav-arrow next-arrow" id="next-slide" aria-label="Next slide">
-            <i data-lucide="chevron-right"></i>
-        </button>
-        <div class="slide-indicators" id="slide-indicators">
-            <div class="indicator active" data-index="0"></div>
-            <div class="indicator" data-index="1"></div>
-            <div class="indicator" data-index="2"></div>
+            <!-- Pagination Dots -->
+            <div class="hero-swiper-pagination" style="position: absolute; bottom: 1rem; width: 100%; text-align: center; z-index: 20;"></div>
         </div>
     </section>
 
@@ -116,8 +135,8 @@
                     </div>
                 </div>
                 <div class="wcu-content">
-                    <span class="subtitle text-amber">Our Legacy</span>
-                    <h2>Why Devotees Choose Our Murtis</h2>
+                    <span class="subtitle-pill">[ OUR LEGACY ]</span>
+                    <h2 style="font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 1rem;">Why Devotees Choose Our <span class="heading-accent">Murtis</span></h2>
                     <div class="divider bg-amber"></div>
                     <p class="desc text-stone-300">Every Ganesha idol we create is not just a sculpture; it is a labor of love, devotion, and meticulous artistry. We ensure that your spiritual celebrations are elevated with pure, beautiful, and authentic craftsmanship.</p>
                     
@@ -144,8 +163,8 @@
     <section id="why-us-cards" style="padding: 6rem 0; background: #fff9fb;">
         <div class="container">
             <div class="section-header text-center">
-                <span class="subtitle">Our Promise</span>
-                <h2>Why Choose Us</h2>
+                <span class="subtitle-pill">[ OUR PROMISE ]</span>
+                <h2>Why Choose <span class="heading-accent">Us</span></h2>
                 <div class="divider mx-auto"></div>
                 <p class="desc mx-auto max-w-3xl">Six pillars that have kept our customers returning — and referring — year after year.</p>
             </div>
@@ -190,8 +209,8 @@
         <div class="bg-decor bottom-right"></div>
         <div class="container relative z-10">
             <div class="section-header">
-                <span class="subtitle">What We Offer</span>
-                <h2>Our Products</h2>
+                <span class="subtitle-pill">[ WHAT WE OFFER ]</span>
+                <h2>Our <span class="heading-accent">Products</span></h2>
                 <div class="divider"></div>
                 <p class="desc">We combine ancient sculpting traditions with modern eco-conscious practices to deliver the most beautiful and divine Ganesha idols for your celebrations.</p>
             </div>
@@ -259,10 +278,10 @@
     <section id="gallery" class="gallery-section">
         <div class="container">
             <div class="section-header text-center">
-                <span class="subtitle">Our Three Sacred Creations</span>
-                <h2>The Three Divine Types</h2>
+                <span class="subtitle-pill">[ OUR COLLECTION ]</span>
+                <h2>Our Sacred <span class="heading-accent">Gallery</span></h2>
                 <div class="divider mx-auto"></div>
-                <p class="desc mx-auto max-w-3xl">We specialize exclusively in crafting three premium styles of Ganesha Ji idols. Select your preferred style to book or customize.</p>
+                <p class="desc mx-auto max-w-3xl">Explore our exclusive gallery of premium Ganesha Ji idols. Select your preferred style to view details or customize.</p>
             </div>
 
             <div id="gallery-grid" class="img-mosaic img-mosaic-3">
@@ -283,62 +302,140 @@
     </section>
 
 <!-- Testimonials -->
-    <section class="testimonials dark-section">
-        <div class="bg-decor top-right"></div>
+    <section class="testimonials" style="background-color: var(--body-bg); padding: 5rem 0;">
         <div class="container relative z-10">
-            <div class="section-header text-center">
-                <span class="subtitle text-amber">Devotee Stories</span>
-                <h2>Blessed Experiences</h2>
-                <div class="divider bg-amber mx-auto"></div>
-                <p class="desc text-stone-300 mx-auto max-w-3xl">Read how our beautifully crafted Ganesha idols have brought joy, peace, and divine energy to thousands of homes.</p>
+            <div class="section-header text-center" style="margin-bottom: 4rem;">
+                <span class="subtitle-pill">[ DEVOTEE EXPERIENCES ]</span>
+                <h2>What our devotees <span class="heading-accent">are saying</span></h2>
+                <p class="desc text-stone-300 mx-auto max-w-3xl" style="color: var(--text-muted);">Real stories of devotion and joy from across India. We pride ourselves on creating unforgettable, divine moments for every home.</p>
             </div>
 
-            <div class="testi-grid">
-                <!-- Testimonial 1 -->
-                <div class="testi-card">
-                    <i data-lucide="quote" class="quote-icon"></i>
-                    <div class="stars">
-                        <i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i>
+            
+            <div class="swiper testi-swiper" style="padding-bottom: 3rem; padding-left: 1rem; padding-right: 1rem; margin-left: -1rem; margin-right: -1rem; overflow: hidden;">
+                <div class="swiper-wrapper">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="testi-card-new">
+                            <div class="testi-header">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="verified"><i class="fa-brands fa-google" style="margin-right: 4px;"></i> Verified</div>
+                            </div>
+                            <img src="images/Herosection/slide 1.png" alt="Testimonial Image" class="testi-img">
+                            <p class="testi-text">"We ordered the 2.5 feet Dagdusheth style Ganesha last year. The detailing on the crown and the serene expression on Bappa's face brought tears of joy to our family. Truly divine craftsmanship!"</p>
+                            <div class="testi-user">
+                                <div class="user-initials">AD</div>
+                                <div>
+                                    <h4>Aniket Deshmukh</h4>
+                                    <span>Google Review</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <p class="testi-text">"We ordered the 2.5 feet Dagdusheth style Ganesha last year. The detailing on the crown and the serene expression on Bappa's face brought tears of joy to our family. Truly divine craftsmanship!"</p>
-                    <div class="testi-user">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&h=120&q=80" alt="Aniket Deshmukh">
-                        <div>
-                            <h4>Aniket Deshmukh</h4>
-                            <span>Pune Devotee</span>
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="testi-card-new">
+                            <div class="testi-header">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="verified"><i class="fa-brands fa-google" style="margin-right: 4px;"></i> Verified</div>
+                            </div>
+                            <img src="images/Herosection/slide 2.png" alt="Testimonial Image" class="testi-img">
+                            <p class="testi-text">"The Tree Ganesha is a brilliant concept! The immersion was done in a pot on our balcony, and now we have a beautiful flowering plant growing from the clay. Highly recommend their eco-friendly idols."</p>
+                            <div class="testi-user">
+                                <div class="user-initials">PK</div>
+                                <div>
+                                    <h4>Priya Kulkarni</h4>
+                                    <span>Google Review</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="testi-card-new">
+                            <div class="testi-header">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="verified"><i class="fa-brands fa-google" style="margin-right: 4px;"></i> Verified</div>
+                            </div>
+                            <img src="images/Herosection/slide 3.png" alt="Testimonial Image" class="testi-img">
+                            <p class="testi-text">"Outstanding service! They customized a 4-feet idol for our society pandal. The packaging was extremely secure, and they delivered it right on time with absolute care. Will book again!"</p>
+                            <div class="testi-user">
+                                <div class="user-initials">SM</div>
+                                <div>
+                                    <h4>Sanjay Mehta</h4>
+                                    <span>Google Review</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="testi-card-new">
+                            <div class="testi-header">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="verified"><i class="fa-brands fa-google" style="margin-right: 4px;"></i> Verified</div>
+                            </div>
+                            <img src="images/Herosection/slide 1.png" alt="Testimonial Image" class="testi-img">
+                            <p class="testi-text">"We ordered the 2.5 feet Dagdusheth style Ganesha last year. The detailing on the crown and the serene expression on Bappa's face brought tears of joy to our family. Truly divine craftsmanship!"</p>
+                            <div class="testi-user">
+                                <div class="user-initials">AD</div>
+                                <div>
+                                    <h4>Aniket Deshmukh</h4>
+                                    <span>Google Review</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="testi-card-new">
+                            <div class="testi-header">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="verified"><i class="fa-brands fa-google" style="margin-right: 4px;"></i> Verified</div>
+                            </div>
+                            <img src="images/Herosection/slide 2.png" alt="Testimonial Image" class="testi-img">
+                            <p class="testi-text">"The Tree Ganesha is a brilliant concept! The immersion was done in a pot on our balcony, and now we have a beautiful flowering plant growing from the clay. Highly recommend their eco-friendly idols."</p>
+                            <div class="testi-user">
+                                <div class="user-initials">PK</div>
+                                <div>
+                                    <h4>Priya Kulkarni</h4>
+                                    <span>Google Review</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="testi-card-new">
+                            <div class="testi-header">
+                                <div class="stars">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="verified"><i class="fa-brands fa-google" style="margin-right: 4px;"></i> Verified</div>
+                            </div>
+                            <img src="images/Herosection/slide 3.png" alt="Testimonial Image" class="testi-img">
+                            <p class="testi-text">"Outstanding service! They customized a 4-feet idol for our society pandal. The packaging was extremely secure, and they delivered it right on time with absolute care. Will book again!"</p>
+                            <div class="testi-user">
+                                <div class="user-initials">SM</div>
+                                <div>
+                                    <h4>Sanjay Mehta</h4>
+                                    <span>Google Review</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Testimonial 2 -->
-                <div class="testi-card">
-                    <i data-lucide="quote" class="quote-icon"></i>
-                    <div class="stars">
-                        <i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i>
-                    </div>
-                    <p class="testi-text">"The Tree Ganesha is a brilliant concept! The immersion was done in a pot on our balcony, and now we have a beautiful flowering plant growing from the clay. Highly recommend their eco-friendly idols."</p>
-                    <div class="testi-user">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&h=120&q=80" alt="Priya Kulkarni">
-                        <div>
-                            <h4>Priya Kulkarni</h4>
-                            <span>Eco-Conscious Homemaker</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="testi-card">
-                    <i data-lucide="quote" class="quote-icon"></i>
-                    <div class="stars">
-                        <i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i><i data-lucide="star" class="star fill"></i>
-                    </div>
-                    <p class="testi-text">"Outstanding service! They customized a 4-feet idol for our society pandal. The packaging was extremely secure, and they delivered it right on time with absolute care. Will book again!"</p>
-                    <div class="testi-user">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80" alt="Sanjay Mehta">
-                        <div>
-                            <h4>Sanjay Mehta</h4>
-                            <span>Mandal Coordinator</span>
-                        </div>
-                    </div>
-                </div>
+                <div class="testi-swiper-pagination" style="text-align: center; margin-top: 1rem;"></div>
             </div>
         </div>
     </section>
@@ -349,34 +446,57 @@
     <section id="blogs" class="blogs-section bg-light">
         <div class="container relative z-10">
             <div class="section-header text-center">
-                <span class="subtitle">Latest Insights</span>
-                <h2>Our Blogs</h2>
+                <span class="subtitle-pill">[ LATEST INSIGHTS ]</span>
+                <h2>Our <span class="heading-accent">Blogs</span></h2>
                 <div class="divider mx-auto"></div>
             </div>
             
-            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <div class="service-card group">
-                    <img src="images/our services/Eco-friendly.png" alt="Eco-friendly Visarjan" class="service-card-img">
-                    <div class="service-card-body">
-                        <h3>The Importance of Eco-Friendly Visarjan</h3>
-                        <p>Learn why choosing a clay Ganesha helps preserve our rivers and how you can perform a beautiful home visarjan.</p>
-                        <a href="blog-eco.html" class="learn-more">Read Full Blog &rarr;</a>
+                        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="blog-card-new group">
+                    <div class="blog-img-wrapper">
+                        <span class="blog-badge">DEVOTION</span>
+                        <img src="images/our services/Eco-friendly.png" alt="Eco-friendly Visarjan" class="blog-img">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> April 4, 2026</span>
+                            <span><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> 8 min read</span>
+                        </div>
+                        <h3 class="blog-title">Blog 1: The Importance of Eco-Friendly Visarjan</h3>
+                        <p class="blog-desc">Learn why choosing a clay Ganesha helps preserve our rivers and how you can perform a beautiful home visarjan.</p>
+                        <a href="blog-eco.html" class="blog-link">READ MORE &rarr;</a>
                     </div>
                 </div>
-                <div class="service-card group">
-                    <img src="images/our services/custom murti.png" alt="Solapur Antique Style" class="service-card-img">
-                    <div class="service-card-body">
-                        <h3>Discovering the Solapur Antique Style</h3>
-                        <p>A deep dive into the rich heritage and intricate detailing of the traditional Solapur Ganesha murtis.</p>
-                        <a href="blog-antique.html" class="learn-more">Read Full Blog &rarr;</a>
+                
+                <div class="blog-card-new group">
+                    <div class="blog-img-wrapper">
+                        <span class="blog-badge">HERITAGE</span>
+                        <img src="images/our services/custom murti.png" alt="Solapur Antique Style" class="blog-img">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> April 4, 2026</span>
+                            <span><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> 7 min read</span>
+                        </div>
+                        <h3 class="blog-title">Blog 2: Discovering the Solapur Antique Style</h3>
+                        <p class="blog-desc">A deep dive into the rich heritage and intricate detailing of the traditional Solapur Ganesha murtis.</p>
+                        <a href="blog-antique.html" class="blog-link">READ MORE &rarr;</a>
                     </div>
                 </div>
-                <div class="service-card group">
-                    <img src="images/our legacy.png" alt="Seed Ganesha" class="service-card-img">
-                    <div class="service-card-body">
-                        <h3>Grow a Plant with Seed Ganesha</h3>
-                        <p>Discover the magic of Seed Ganeshas. How a symbol of devotion transforms into a living plant in your home.</p>
-                        <a href="blog-seed.html" class="learn-more">Read Full Blog &rarr;</a>
+
+                <div class="blog-card-new group">
+                    <div class="blog-img-wrapper">
+                        <span class="blog-badge">LIFESTYLE</span>
+                        <img src="images/our legacy.png" alt="Seed Ganesha" class="blog-img">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fa-regular fa-calendar" style="margin-right: 5px;"></i> April 4, 2026</span>
+                            <span><i class="fa-regular fa-clock" style="margin-right: 5px;"></i> 9 min read</span>
+                        </div>
+                        <h3 class="blog-title">Blog 3: Grow a Plant with Seed Ganesha</h3>
+                        <p class="blog-desc">Discover the magic of Seed Ganeshas. How a symbol of devotion transforms into a living plant in your home.</p>
+                        <a href="blog-seed.html" class="blog-link">READ MORE &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -391,18 +511,58 @@
         <div class="bg-decor bottom-right"></div>
         
         <div class="container relative z-10">
+            
+            <div class="section-header text-center" style="margin-bottom: 4rem;">
+                <span class="subtitle-pill">[ GET IN TOUCH ]</span>
+                <h2>Contact <span class="heading-accent">Us</span></h2>
+                <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1rem; line-height: 1.6;"><strong>Connect With Us – Your Divine Experience Awaits.</strong> Every detail is crafted for devotion, precision, and sustainability. Book your personalized eco-friendly Ganesha idol and step into a world where tradition meets refinement.</p>
+            </div>
+
             <div class="inquiry-container">
-                <div class="inquiry-info">
+                <div class="inquiry-info" style="background: linear-gradient(to bottom right, #2c2118, #1a1410);">
                     <div class="dot-pattern-bg"></div>
                     <div class="relative z-10">
-                        <div class="icon-box-amber"><i data-lucide="sparkles"></i></div>
-                        <h2>Book Your Divine Blessing</h2>
-                        <p>Fill out the form to reserve your Ganesha idol or request a custom design. Our master artisans will get in touch with you to discuss details, colors, and delivery.</p>
-                    </div>
-                    <div class="promises mt-auto relative z-10">
-                        <div class="promise"><i data-lucide="check-circle" class="text-amber"></i> 100% Refundable booking deposit</div>
-                        <div class="promise"><i data-lucide="check-circle" class="text-amber"></i> Video updates during sculpting process</div>
-                        <div class="promise"><i data-lucide="check-circle" class="text-amber"></i> Eco-friendly immersion guide included</div>
+                        <h2 style="color: white; margin-bottom: 2rem; font-size: 1.75rem;">Visit Our Studio</h2>
+                        
+                        <div class="contact-item" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="contact-icon" style="color: var(--primary);"><i class="fa-solid fa-location-dot mt-1"></i></div>
+                            <div>
+                                <h4 style="color: white; font-weight: 600; margin-bottom: 0.25rem;">Location</h4>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">123 Artisan Lane, Mumbai,<br>Maharashtra 400001</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="contact-icon" style="color: var(--primary);"><i class="fa-brands fa-whatsapp mt-1"></i></div>
+                            <div>
+                                <h4 style="color: white; font-weight: 600; margin-bottom: 0.25rem;">WhatsApp</h4>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">+91 98765 43210</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="contact-icon" style="color: var(--primary);"><i class="fa-solid fa-phone mt-1"></i></div>
+                            <div>
+                                <h4 style="color: white; font-weight: 600; margin-bottom: 0.25rem;">Phone</h4>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">+91 98765 43210</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                            <div class="contact-icon" style="color: var(--primary);"><i class="fa-solid fa-envelope mt-1"></i></div>
+                            <div>
+                                <h4 style="color: white; font-weight: 600; margin-bottom: 0.25rem;">Email Concierge</h4>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">info@moryaarts.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item" style="display: flex; gap: 1rem;">
+                            <div class="contact-icon" style="color: var(--primary);"><i class="fa-regular fa-clock mt-1"></i></div>
+                            <div>
+                                <h4 style="color: white; font-weight: 600; margin-bottom: 0.25rem;">Opening Hours</h4>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 0.875rem;">Mon - Sun: 9:00 AM - 9:00 PM</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -467,47 +627,100 @@
         </div>
     </section>
 
+
+    <!-- Pre-Footer CTA -->
+    <section class="pre-footer-cta">
+        <div class="bg-decor" style="position: absolute; top: -50%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div class="bg-decor" style="position: absolute; bottom: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, transparent 70%); border-radius: 50%;"></div>
+        <div class="container relative z-10 pre-footer-content">
+            <div class="cta-content" style="max-width: 600px;">
+                <span class="subtitle-pill">[ REACH OUT ]</span>
+                <h2>Ready to experience Divine <span class="heading-accent">Devotion?</span></h2>
+                <p style="font-size: 1rem; opacity: 0.9; line-height: 1.6; max-width: 500px;">Book your Ganesha Murti today. Whether you need an eco-friendly clay idol or a majestic traditional centerpiece, our master artisans are ready to serve you with world-class craftsmanship and pure devotion.</p>
+            </div>
+            <div class="cta-actions">
+                <a href="#inquiry" class="btn-white-custom" style="background: white; color: #83526a; padding: 12px 30px; border-radius: 99px; font-weight: 600; text-decoration: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">Book Now</a>
+                <a href="mailto:info@moryaarts.com" class="btn-outline-white-custom" style="background: transparent; color: white; border: 1px solid white; padding: 12px 30px; border-radius: 99px; font-weight: 600; text-decoration: none;">Email Us</a>
+            </div>
+        </div>
+    </section>
+
 <!-- Footer -->
     <footer class="footer">
-        <div class="footer-gradient"></div>
         <div class="container relative z-10">
             <div class="footer-grid">
+                
+                <!-- Brand Col -->
                 <div class="footer-brand">
-                    <div class="logo">
-                        <img src="images/logo.png" alt="Div Mangal Murtis Logo" class="logo-img logo-img-footer">
+                    <a href="index.html" style="display: inline-block; margin-bottom: 1.5rem;">
+                        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; letter-spacing: 2px; margin: 0; color: var(--white);">DIV MANGAL</h3>
+                        <span style="font-size: 0.6rem; letter-spacing: 5px; color: var(--primary);">MURTIS</span>
+                    </a>
+                    <p style="opacity: 0.7; font-size: 0.85rem; line-height: 1.8; margin-bottom: 2rem; max-width: 280px;">Crafting premium, eco-friendly, and traditional Ganesha idols with absolute devotion and master craftsmanship for over 25 years.</p>
+                    <div class="social-icons" style="display: flex; gap: 1rem;">
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: white; transition: background 0.3s;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; color: white; transition: background 0.3s;"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
-                    <p>Crafting premium, eco-friendly, and traditional Ganesha idols with absolute devotion and master craftsmanship for over 25 years.</p>
                 </div>
                 
+                <!-- Quick Links -->
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html#products">Our Services</a></li>
-                        <li><a href="index.html#why-choose-us">Why Choose Us</a></li>
-                        <li><a href="index.html#gallery">Murti Gallery</a></li>
-                        <li><a href="index.html#inquiry">Book / Inquire</a></li>
+                    <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--white);">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="about.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">About Us</a></li>
+                        <li><a href="#products" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">Our Products</a></li>
+                        <li><a href="gallery.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">Gallery</a></li>
+                        <li><a href="faq.html" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">FAQs</a></li>
+                        <li><a href="#inquiry" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">Book Now</a></li>
                     </ul>
                 </div>
 
+                <!-- Services -->
+                <div class="footer-links">
+                    <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--white);">Murti Types</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1rem;">
+                        <li><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">Eco-Friendly Clay</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">Traditional Ornate</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">Marble Finish</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">Seed Ganesha</a></li>
+                        <li><a href="#" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; transition: color 0.3s;">Custom Decors</a></li>
+                    </ul>
+                </div>
+
+                <!-- Stay In Touch -->
                 <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><i data-lucide="map-pin" class="text-amber"></i> <span>102, Artisan Plaza, Near Dagdusheth Temple, Pune - 411002</span></li>
-                        <li><i data-lucide="phone" class="text-amber"></i> <span>+91 98765 43210</span></li>
-                        <li><i data-lucide="mail" class="text-amber"></i> <span>info@moryaarts.com</span></li>
-                    </ul>
-                </div>
+                    <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--white);">Stay in Touch</h4>
+                    <p style="opacity: 0.7; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.5rem;">Subscribe for early booking updates, exclusive offers, and artisan stories.</p>
+                    
+                    <form style="display: flex; margin-bottom: 2rem; background: rgba(255,255,255,0.05); border-radius: 99px; overflow: hidden;">
+                        <input type="email" placeholder="Your email address" style="background: transparent; border: none; padding: 12px 20px; color: white; width: 100%; outline: none; font-size: 0.85rem;">
+                        <button type="submit" style="background: var(--primary); border: none; padding: 0 20px; color: white; cursor: pointer;"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
 
-                <div class="footer-hours">
-                    <h4>Workshop Hours</h4>
-                    <p>Monday - Sunday: 9:00 AM - 9:00 PM</p>
-                    <p class="italic text-amber-dim">*Visitors are welcome to witness the live sculpting process at our workshop.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.85rem; opacity: 0.8;">
+                            <i class="fa-solid fa-envelope" style="color: var(--primary); margin-top: 3px;"></i> info@moryaarts.com
+                        </li>
+                        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.85rem; opacity: 0.8;">
+                            <i class="fa-solid fa-phone" style="color: var(--primary); margin-top: 3px;"></i> +91 98765 43210
+                        </li>
+                        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.85rem; opacity: 0.8; line-height: 1.6;">
+                            <i class="fa-solid fa-location-dot" style="color: var(--primary); margin-top: 3px;"></i> 102, Artisan Plaza, Near Dagdusheth Temple, Pune - 411002
+                        </li>
+                        <li style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.85rem; opacity: 0.8;">
+                            <i class="fa-regular fa-clock" style="color: var(--primary); margin-top: 3px;"></i> Mon - Sun: 9:00 AM - 9:00 PM
+                        </li>
+                    </ul>
                 </div>
             </div>
             
+            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p>&copy; 2026 Div Mangal Murtis. All rights reserved.</p>
-                <p class="made-with">Made with <i data-lucide="heart" class="text-red fill-red"></i> for Ganpati Bappa Devotees</p>
+                <p style="margin: 0;">Div Mangal Murtis | Made with <i class="fa-solid fa-heart" style="color: var(--primary);"></i> for Ganpati Bappa Devotees</p>
+                <div class="footer-legal">
+                    <a href="#" style="color: white; text-decoration: none;">Terms and Conditions</a>
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -594,8 +807,9 @@
 
     <!-- WhatsApp Floating Button -->
     <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        <i class="fa-brands fa-whatsapp" style="font-size: 35px; margin-top: 2px;"></i>
     </a>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

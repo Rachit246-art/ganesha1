@@ -1,70 +1,74 @@
 // Initialize Lucide Icons
 lucide.createIcons();
 
-// --- Hero Carousel ---
+// --- Theme Global Features ---
 document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
-    const indicators = document.querySelectorAll('.indicator');
-    const prevBtn = document.getElementById('prev-slide');
-    const nextBtn = document.getElementById('next-slide');
+    // 1. Page Loader
+    const pageLoader = document.getElementById('page-loader');
+    if (pageLoader) {
+        setTimeout(() => {
+            pageLoader.classList.add('hidden');
+        }, 1500); // 1.5s delay to show animation
+    }
+
+    // 2. Custom Cursor
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorOutline = document.querySelector('.cursor-outline');
     
-    let currentSlide = 0;
-    const slideCount = slides.length;
-    let autoPlayTimer;
-
-    function goToSlide(n) {
-        slides[currentSlide].classList.remove('active');
-        indicators[currentSlide].classList.remove('active');
-        
-        currentSlide = (n + slideCount) % slideCount;
-        
-        slides[currentSlide].classList.add('active');
-        indicators[currentSlide].classList.add('active');
-    }
-
-    function nextSlide() {
-        goToSlide(currentSlide + 1);
-    }
-
-    function prevSlide() {
-        goToSlide(currentSlide - 1);
-    }
-
-    function startAutoPlay() {
-        autoPlayTimer = setInterval(nextSlide, 6000);
-    }
-
-    function resetAutoPlay() {
-        clearInterval(autoPlayTimer);
-        startAutoPlay();
-    }
-
-    // Event Listeners for Carousel
-    if (prevBtn && nextBtn) {
-        prevBtn.addEventListener('click', () => {
-            prevSlide();
-            resetAutoPlay();
+    if (cursorDot && cursorOutline && matchMedia('(pointer:fine)').matches) {
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            
+            // Add a slight delay for outline
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 150, fill: "forwards" });
         });
 
-        nextBtn.addEventListener('click', () => {
-            nextSlide();
-            resetAutoPlay();
+        // Add hover effect to links and buttons
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => cursorOutline.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursorOutline.classList.remove('hover'));
         });
     }
 
-    indicators.forEach((indicator) => {
-        indicator.addEventListener('click', (e) => {
-            const index = parseInt(e.target.getAttribute('data-index'));
-            goToSlide(index);
-            resetAutoPlay();
+    // 3. Scroll Progress Bar
+    const scrollProgress = document.getElementById('scroll-progress');
+    if (scrollProgress) {
+        window.addEventListener('scroll', () => {
+            const scrollPx = document.documentElement.scrollTop;
+            const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = `${scrollPx / winHeightPx * 100}%`;
+            scrollProgress.style.width = scrolled;
         });
-    });
+    }
 
-    // Start auto play
-    if (slides.length > 0) {
-        startAutoPlay();
+    // 4. Swiper Hero Carousel
+    if (typeof Swiper !== 'undefined') {
+        const heroSwiper = new Swiper('.hero-swiper', {
+            loop: true,
+            effect: 'fade',
+            autoplay: {
+                delay: 6000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.hero-swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.hero-swiper-next',
+                prevEl: '.hero-swiper-prev',
+            },
+        });
     }
 });
+
 
 // --- Modal Logic ---
 function openModal(modalId) {
@@ -149,6 +153,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
+
+
+
 });
 
 // --- Gallery Filter Logic ---
@@ -174,6 +181,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+
+
 });
 
 // --- Mobile Menu Toggle ---
@@ -257,6 +267,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             });
+        });
+    }
+});
+
+// Testimonial Swiper Auto-Sliding
+document.addEventListener('DOMContentLoaded', () => {
+    if(document.querySelector('.testi-swiper')) {
+        new Swiper('.testi-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.testi-swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
         });
     }
 });
