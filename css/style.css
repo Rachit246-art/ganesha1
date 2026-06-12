@@ -936,26 +936,26 @@ section {
     border-radius: 9999px;
     font-size: 0.875rem;
     font-weight: 600;
-    border: 2px solid var(--stone-300);
-    background: var(--white);
-    color: var(--stone-700);
+    border: 1.5px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
     cursor: pointer;
     transition: all 0.25s ease;
     letter-spacing: 0.02em;
 }
 
 .filter-btn:hover {
-    border-color: var(--amber-500);
-    color: var(--amber-600);
-    background: var(--amber-50);
+    border-color: var(--primary);
+    color: var(--white);
+    background: var(--primary-dark);
     transform: translateY(-2px);
 }
 
 .filter-btn.active {
-    background: linear-gradient(to right, var(--amber-600), var(--amber-700));
+    background: var(--primary);
     border-color: transparent;
     color: var(--white);
-    box-shadow: 0 4px 14px rgba(180, 120, 40, 0.4);
+    box-shadow: 0 4px 14px rgba(201, 169, 110, 0.4);
 }
 
 .gallery-card {
@@ -1633,8 +1633,8 @@ section {
 .gallery-card.hidden { display: none; }
 
 .filter-tabs { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
-.filter-btn { padding: 0.55rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--amber-400, #d97706); background: transparent; color: var(--amber-700, #b45309); font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: background 0.25s, color 0.25s, box-shadow 0.25s; }
-.filter-btn:hover, .filter-btn.active { background: var(--amber-600, #b45309); color: #fff; border-color: var(--amber-600, #b45309); box-shadow: 0 4px 14px rgba(180,83,9,0.3); }
+.filter-btn { padding: 0.55rem 1.4rem; border-radius: 50px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); font-size: 0.875rem; font-weight: 600; cursor: pointer; transition: background 0.25s, color 0.25s, box-shadow 0.25s; }
+.filter-btn:hover, .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); box-shadow: 0 4px 14px rgba(201, 169, 110, 0.3); }
 
 /* Values Grid for Why Choose Us */
 .values-grid {
@@ -2197,4 +2197,88 @@ html, body {
 
 .heading-accent {
     color: var(--accent);
+}
+
+/* ---- WHY CHOOSE US SPLIT LAYOUT ---- */
+.why-us-split-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+@media (min-width: 992px) {
+    .why-us-split-layout {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 5rem;
+    }
+}
+
+.why-us-text-col {
+    position: sticky;
+    top: 120px;
+}
+
+/* Override existing values-grid columns */
+.why-us-grid-col .values-grid {
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .why-us-grid-col .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Card Redesign based on Reference */
+.why-us-grid-col .value-card {
+    text-align: left;
+    padding: 2.5rem;
+    border-top: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-us-grid-col .value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(201, 169, 110, 0.15);
+}
+
+.why-us-grid-col .value-card.bg-white {
+    background-color: #ffffff;
+}
+
+.why-us-grid-col .value-card.bg-beige {
+    background-color: var(--primary-light);
+}
+
+.why-us-grid-col .value-icon {
+    width: auto;
+    height: auto;
+    background: transparent;
+    border-radius: 0;
+    margin: 0 0 1rem 0;
+    justify-content: flex-start;
+}
+
+.why-us-grid-col .value-icon i {
+    width: 1.8rem;
+    height: 1.8rem;
+    color: var(--primary);
+}
+
+.why-us-grid-col .value-card h3 {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+    color: var(--dark);
+}
+
+.why-us-grid-col .value-card p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-muted);
 }
