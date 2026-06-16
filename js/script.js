@@ -52,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof Swiper !== 'undefined') {
         const heroSwiper = new Swiper('.hero-swiper', {
             loop: true,
-            effect: 'fade',
             autoplay: {
                 delay: 6000,
                 disableOnInteraction: false,
@@ -274,22 +273,86 @@ document.addEventListener('DOMContentLoaded', () => {
 // Testimonial Swiper Auto-Sliding
 document.addEventListener('DOMContentLoaded', () => {
     if(document.querySelector('.testi-swiper')) {
-        new Swiper('.testi-swiper', {
-            slidesPerView: 1,
-            spaceBetween: 30,
+    const testiSwiper = new Swiper('.testi-swiper', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.testi-swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+        }
+    });
+
+    // Pause swiper on video play
+    const videos = document.querySelectorAll('.testi-swiper video');
+    videos.forEach(video => {
+        video.addEventListener('play', () => {
+            testiSwiper.autoplay.stop();
+        });
+        video.addEventListener('pause', () => {
+            testiSwiper.autoplay.start();
+        });
+        video.addEventListener('ended', () => {
+            testiSwiper.autoplay.start();
+        });
+    });
+}
+});
+
+// Collection Swiper
+document.addEventListener('DOMContentLoaded', () => {
+    if(document.querySelector('.collection-swiper')) {
+        new Swiper('.collection-swiper', {
+            slidesPerView: 1.5,
+            spaceBetween: 20,
             loop: true,
+            speed: 4000,
             autoplay: {
-                delay: 3000,
+                delay: 0,
                 disableOnInteraction: false,
             },
-            pagination: {
-                el: '.testi-swiper-pagination',
-                clickable: true,
-            },
             breakpoints: {
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
+                576: { slidesPerView: 2.5 },
+                768: { slidesPerView: 3.5 },
+                1024: { slidesPerView: 4.5 },
+                1280: { slidesPerView: 5.5 }
             }
         });
     }
+});
+
+
+// FAQ Accordion
+document.addEventListener('DOMContentLoaded', () => {
+    const faqHeaders = document.querySelectorAll('.faq-header');
+    faqHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const card = header.parentElement;
+            const body = card.querySelector('.faq-body');
+            
+            // Close others for a clean accordion effect
+            document.querySelectorAll('.faq-card').forEach(c => {
+                if(c !== card) {
+                    c.classList.remove('active');
+                    c.querySelector('.faq-body').style.maxHeight = null;
+                }
+            });
+
+            if (card.classList.contains('active')) {
+                card.classList.remove('active');
+                body.style.maxHeight = null;
+            } else {
+                card.classList.add('active');
+                body.style.maxHeight = body.scrollHeight + "px";
+            }
+        });
+    });
 });

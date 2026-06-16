@@ -786,13 +786,6 @@ section {
     transform: scale(1.05);
 }
 
-.image-wrapper::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(255, 240, 245, 0.8), transparent, transparent);
-    pointer-events: none;
-}
 
 .floating-badge {
     position: absolute;
@@ -1703,8 +1696,8 @@ section {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     background-color: #25d366; /* WhatsApp Green */
     color: #fff;
     border-radius: 50px;
@@ -2281,4 +2274,444 @@ html, body {
     font-size: 0.9rem;
     line-height: 1.6;
     color: var(--text-muted);
+}
+
+/* Sacred Collection Slider */
+.sacred-collection {
+    background-color: #f8fcfb;
+    position: relative;
+}
+
+.collection-swiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+
+.collection-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+}
+
+.collection-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+}
+
+.cc-image-wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+    aspect-ratio: 3/4;
+    background: #f4f4f4;
+}
+
+.cc-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.collection-card:hover .cc-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.cc-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: #e77b21;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.cc-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cc-title {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+}
+
+.cc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 9999px;
+    background: transparent;
+    color: #333;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cc-btn:hover {
+    background: #fafafa;
+    border-color: rgba(0,0,0,0.15);
+    color: var(--primary);
+}
+
+/* Floating Features Bar */
+.features-wrapper {
+    margin-top: -60px;
+    position: relative;
+    z-index: 30;
+    margin-bottom: 2rem;
+}
+
+.features-bar {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 130px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.15), rgba(217, 119, 6, 0.1));
+    color: var(--primary); /* Theme amber/gold color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.0);
+}
+
+.feature-item:hover .feature-icon {
+    transform: scale(1.15) rotate(5deg);
+    background: linear-gradient(135deg, var(--primary), #d97706);
+    color: white;
+    box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+}
+
+.feature-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--font-sans);
+}
+
+.feature-subtitle {
+    font-size: 0.75rem;
+    color: #888;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .features-bar {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+    .features-wrapper {
+        margin-top: -30px;
+    }
+}
+
+/* Centered Why Choose Us */
+.why-choose-us-centered {
+    padding: 6rem 0;
+    background-color: var(--body-bg);
+    text-align: center;
+}
+
+.why-choose-us-centered .subtitle-pill {
+    margin: 0 auto 1rem;
+    display: inline-block;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.why-choose-us-centered h2 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.why-choose-us-centered .desc {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.wcu-grid-centered {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wcu-card-centered {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    border: 1px solid rgba(217, 119, 6, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wcu-card-centered:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(217, 119, 6, 0.1);
+    border-color: rgba(217, 119, 6, 0.3);
+}
+
+.wcu-card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.wcu-card-icon i {
+    width: 28px;
+    height: 28px;
+}
+
+.wcu-card-centered h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
+}
+
+.wcu-card-centered p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .wcu-grid-centered {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .wcu-grid-centered {
+        grid-template-columns: 1fr;
+    }
+    .why-choose-us-centered h2 {
+        font-size: 2.25rem;
+    }
+}
+
+.wcu-card-icon {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wcu-card-centered:hover .wcu-card-icon {
+    transform: scale(1.15) rotate(10deg);
+    background: linear-gradient(135deg, var(--primary), #d97706);
+    color: white;
+    box-shadow: 0 8px 20px rgba(217, 119, 6, 0.3);
+}
+
+/* Premium FAQ Section */
+.faq-section {
+    padding: 6rem 0;
+    background: #fcfbfa; /* Warm light premium bg */
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(217,119,6,0.15);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-card:hover {
+    box-shadow: 0 8px 25px rgba(217, 119, 6, 0.08);
+}
+
+.faq-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-header:hover { 
+    background: #fdfbf7; 
+}
+
+.faq-header h3 {
+    margin: 0; 
+    font-size: 1.15rem; 
+    font-family: var(--font-serif);
+    color: var(--text); 
+    transition: color 0.3s ease;
+}
+
+.faq-card.active .faq-header h3 { 
+    color: var(--primary); 
+}
+
+.faq-icon {
+    color: var(--primary); 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(217, 119, 6, 0.1);
+}
+
+.faq-card.active .faq-icon { 
+    transform: rotate(180deg); 
+    background: var(--primary);
+    color: white;
+}
+
+.faq-body {
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.4s ease-in-out;
+}
+
+.faq-content {
+    padding: 0 2rem 1.5rem; 
+    color: #666; 
+    line-height: 1.6;
+}
+
+/* Instagram Section */
+.insta-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    display: block;
+}
+.insta-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.insta-card:hover img {
+    transform: scale(1.08);
+}
+.insta-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    font-size: 2.5rem;
+}
+.insta-card:hover .insta-overlay {
+    opacity: 1;
+}
+
+/* Massive Instagram Button */
+.btn-instagram-massive {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 20px 60px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    border-radius: 99px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(220, 39, 67, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 2rem;
+}
+.btn-instagram-massive:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(220, 39, 67, 0.6);
+    color: white;
+}
+.btn-instagram-massive i {
+    font-size: 2.5rem;
 }
