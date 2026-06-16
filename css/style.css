@@ -2715,3 +2715,16 @@ html, body {
 .btn-instagram-massive i {
     font-size: 2.5rem;
 }
+
+/* Pre-Footer CTA Text Visibility Fix */
+.pre-footer-cta h2,
+.pre-footer-cta p {
+    color: var(--white) !important;
+}
+.pre-footer-cta .subtitle-pill {
+    color: var(--white) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+.pre-footer-cta .heading-accent {
+    color: var(--primary-light, #ffd700) !important; /* brighter gold for dark bg */
+}
