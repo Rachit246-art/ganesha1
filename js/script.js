@@ -216,23 +216,42 @@ document.addEventListener('DOMContentLoaded', () => {
     lightbox.className = 'lightbox';
     lightbox.innerHTML = `
         <button class="lightbox-close">&times;</button>
+        <button class="lightbox-prev">&#10094;</button>
         <img class="lightbox-content" src="" alt="">
+        <button class="lightbox-next">&#10095;</button>
     `;
     document.body.appendChild(lightbox);
 
     const lightboxImg = lightbox.querySelector('.lightbox-content');
     const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const prevBtn = lightbox.querySelector('.lightbox-prev');
+    const nextBtn = lightbox.querySelector('.lightbox-next');
 
     // Add click event to all images that should be in the lightbox
     // We target product images and gallery images
-    const triggerImages = document.querySelectorAll('.gallery-card img, .img-mosaic img, .product-card img, .gc-image img');
-    triggerImages.forEach(img => {
+    const triggerImages = Array.from(document.querySelectorAll('.gallery-card img, .img-mosaic img, .product-card img, .gc-image img'));
+    let currentImageIndex = 0;
+
+    triggerImages.forEach((img, index) => {
         img.classList.add('lightbox-trigger');
         img.addEventListener('click', (e) => {
             e.preventDefault(); // prevent other click events if any
+            currentImageIndex = index;
             lightboxImg.src = img.src;
             lightbox.classList.add('active');
         });
+    });
+
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent closing
+        currentImageIndex = (currentImageIndex - 1 + triggerImages.length) % triggerImages.length;
+        lightboxImg.src = triggerImages[currentImageIndex].src;
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // prevent closing
+        currentImageIndex = (currentImageIndex + 1) % triggerImages.length;
+        lightboxImg.src = triggerImages[currentImageIndex].src;
     });
 
     // Close lightbox
@@ -288,19 +307,40 @@ document.addEventListener('DOMContentLoaded', () => {
         breakpoints: {
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 }
+        },
+        on: {
+            init: function () {
+                const activeSlide = this.slides[this.activeIndex];
+                const activeVideo = activeSlide.querySelector('video');
+                if (activeVideo) {
+                    this.autoplay.stop();
+                    activeVideo.currentTime = 0;
+                    activeVideo.play().catch(e => console.log('Autoplay prevented:', e));
+                }
+            },
+            slideChangeTransitionEnd: function () {
+                const allVideos = this.el.querySelectorAll('video');
+                allVideos.forEach(v => {
+                    v.pause();
+                    v.currentTime = 0;
+                });
+                
+                const activeSlide = this.slides[this.activeIndex];
+                const activeVideo = activeSlide.querySelector('video');
+                if (activeVideo) {
+                    this.autoplay.stop();
+                    activeVideo.play().catch(e => console.log('Autoplay prevented:', e));
+                } else {
+                    this.autoplay.start();
+                }
+            }
         }
     });
 
-    // Pause swiper on video play
     const videos = document.querySelectorAll('.testi-swiper video');
     videos.forEach(video => {
-        video.addEventListener('play', () => {
-            testiSwiper.autoplay.stop();
-        });
-        video.addEventListener('pause', () => {
-            testiSwiper.autoplay.start();
-        });
         video.addEventListener('ended', () => {
+            testiSwiper.slideNext();
             testiSwiper.autoplay.start();
         });
     });
