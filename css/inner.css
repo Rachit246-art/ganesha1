@@ -178,11 +178,25 @@
 .about-stat {
   flex: 1;
   text-align: center;
-  padding: 1.25rem 1rem;
+  padding: 1.5rem 1rem;
   background: var(--white);
   border-right: 1px solid var(--stone-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .about-stat:last-child { border-right: none; }
+@media (max-width: 576px) {
+  .about-stats {
+    flex-direction: column;
+  }
+  .about-stat {
+    border-right: none;
+    border-bottom: 1px solid var(--stone-100);
+  }
+  .about-stat:last-child { border-bottom: none; }
+}
 .about-stat strong {
   display: block;
   font-family: var(--font-serif);
@@ -193,11 +207,12 @@
 }
 .about-stat span {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--stone-500);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-top: 0.4rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+  margin-top: 0.5rem;
 }
 
 /* ── Values Grid ──────────────────────────────────────────── */

@@ -2923,3 +2923,36 @@ html, body {
 
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
+/* Made in Bharat Banner Layout */
+.made-in-bharat-banner {
+    background: var(--white);
+    border: 1px solid var(--amber-200);
+    border-radius: 100px;
+    padding: 1rem 3rem 1rem 1rem;
+    width: max-content;
+    max-width: 95%;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.mib-text {
+    text-align: left;
+}
+
+@media (max-width: 576px) {
+    .made-in-bharat-banner {
+        flex-direction: column;
+        border-radius: 20px;
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+        width: 100%;
+    }
+    .mib-text {
+        text-align: center !important;
+    }
+}
+
