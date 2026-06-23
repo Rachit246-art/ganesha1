@@ -2533,6 +2533,14 @@ html, body {
         flex-direction: column;
         align-items: center;
     }
+    .wcu-heading-responsive {
+        font-size: 1.75rem !important;
+    }
+    @media (max-width: 480px) {
+        .wcu-heading-responsive {
+            font-size: 1.4rem !important;
+        }
+    }
     .wcu-content .divider {
         margin-left: auto;
         margin-right: auto;
