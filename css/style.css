@@ -783,6 +783,15 @@ section {
     object-fit: cover;
 }
 
+@media (max-width: 768px) {
+    .image-wrapper img {
+        height: 350px;
+    }
+    .wcu-image-col {
+        margin-bottom: 2rem;
+    }
+}
+
 
 .floating-badge {
     position: absolute;
@@ -871,6 +880,12 @@ section {
     gap: 1rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--stone-800);
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .stat-box {
