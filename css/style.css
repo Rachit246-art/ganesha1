@@ -3007,3 +3007,22 @@ html, body {
     }
 }
 
+
+/* Mobile Catalogue Button */
+.btn-catalogue-mobile {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3);
+}
+@media (min-width: 768px) {
+    .btn-catalogue-mobile {
+        display: none !important;
+    }
+}
