@@ -884,7 +884,21 @@ section {
 
 @media (max-width: 768px) {
     .stats-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.25rem;
+        width: 100%;
+    }
+    .stat-box {
+        padding: 0.5rem 0.25rem;
+        min-width: 0;
+    }
+    .stat-num {
+        font-size: 1rem;
+    }
+    .stat-label {
+        font-size: 0.55rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 }
 
@@ -1620,7 +1634,7 @@ section {
 }
 
 /* ── Gallery Mosaic Additions ────────────────────────────── */
-.img-mosaic { display: grid; gap: 1rem; margin: 3rem 0; }
+.img-mosaic { display: grid; gap: 1rem; margin: 3rem 0; align-items: start; }
 .img-mosaic-2 { grid-template-columns: 1fr; }
 .img-mosaic-3 { grid-template-columns: 1fr; }
 
@@ -1632,14 +1646,14 @@ section {
   .img-mosaic-3 { grid-template-columns: repeat(3, 1fr); }
 }
 
-.img-mosaic img { width: 100%; height: 260px; object-fit: cover; border-radius: 1rem; display: block; transition: transform 0.5s ease; }
+.img-mosaic img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: contain; background: #f9fafb; border-radius: 1rem; display: block; transition: transform 0.5s ease; }
 .img-mosaic img:hover { transform: scale(1.03); }
 
 .gallery-section { padding: 5rem 0; background: #fff; }
 
 .gallery-card { position: relative; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 16px rgba(0,0,0,0.08); transition: transform 0.35s ease, box-shadow 0.35s ease; cursor: pointer; }
 .gallery-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.16); }
-.gallery-card img { width: 100%; height: 260px; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.gallery-card img { width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: contain; background: #f9fafb; display: block; transition: transform 0.5s ease; }
 .gallery-card:hover img { transform: scale(1.06); }
 
 .gallery-card-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(26,15,8,0.75), transparent); color: #fff; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; padding: 1.5rem 1rem 0.85rem; transform: translateY(100%); transition: transform 0.35s ease; }
@@ -1947,8 +1961,9 @@ section {
 }
 .testi-img {
     width: 100%;
-    height: 200px;
+    height: 320px;
     object-fit: cover;
+    object-position: center 15%;
     border-radius: 8px;
     margin-bottom: 1.5rem;
 }
@@ -2538,9 +2553,9 @@ html, body {
         min-width: 45%;
     }
     .hero-slider-section .swiper-slide img {
-        height: 350px !important;
-        object-fit: cover !important;
-        object-position: top center !important;
+        height: auto !important;
+        object-fit: contain !important;
+        object-position: center !important;
     }
     .wcu-content {
         text-align: center;
@@ -2830,6 +2845,19 @@ html, body {
 }
 .btn-instagram-massive i {
     font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .btn-instagram-massive {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+        gap: 0.5rem;
+        white-space: nowrap;
+        margin-top: 1rem;
+    }
+    .btn-instagram-massive i {
+        font-size: 1.4rem;
+    }
 }
 
 /* Pre-Footer CTA Text Visibility Fix */
