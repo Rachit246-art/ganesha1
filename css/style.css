@@ -2689,10 +2689,25 @@ html, body {
 
 @media (max-width: 768px) {
     .wcu-grid-centered {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
     }
     .why-choose-us-centered h2 {
         font-size: 2.25rem;
+    }
+    .wcu-card-centered {
+        padding: 1.5rem 1rem;
+    }
+    .wcu-card-centered h3 {
+        font-size: 1.1rem;
+    }
+    .wcu-card-centered p {
+        font-size: 0.85rem;
+    }
+    .wcu-card-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 1rem;
     }
 }
 
