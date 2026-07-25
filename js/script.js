@@ -3,6 +3,17 @@ lucide.createIcons();
 
 // --- Theme Global Features ---
 document.addEventListener('DOMContentLoaded', () => {
+    // Dynamic Sticky Header Top
+    const announcementBar = document.querySelector('.announcement-bar');
+    const header = document.querySelector('.header');
+    if (announcementBar && header) {
+        const updateHeaderTop = () => {
+            header.style.top = `${announcementBar.offsetHeight}px`;
+        };
+        updateHeaderTop();
+        window.addEventListener('resize', updateHeaderTop);
+    }
+
     // 1. Page Loader
     const pageLoader = document.getElementById('page-loader');
     if (pageLoader) {
