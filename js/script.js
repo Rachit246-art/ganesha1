@@ -302,60 +302,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Testimonial Swiper Auto-Sliding
 document.addEventListener('DOMContentLoaded', () => {
-    if(document.querySelector('.testi-swiper')) {
-    const testiSwiper = new Swiper('.testi-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        loop: true,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        pagination: {
-            el: '.testi-swiper-pagination',
-            clickable: true,
-        },
-        breakpoints: {
-            768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 }
-        },
-        on: {
-            init: function () {
-                const activeSlide = this.slides[this.activeIndex];
-                const activeVideo = activeSlide.querySelector('video');
-                if (activeVideo) {
-                    this.autoplay.stop();
-                    activeVideo.currentTime = 0;
-                    activeVideo.play().catch(e => console.log('Autoplay prevented:', e));
-                }
+    const testiSection = document.querySelector('.testimonials');
+    if(testiSection && document.querySelector('.testi-swiper')) {
+        let hasStarted = false;
+        
+        const testiSwiper = new Swiper('.testi-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: false, // Managed by intersection observer
+            pagination: {
+                el: '.testi-swiper-pagination',
+                clickable: true,
             },
-            slideChangeTransitionEnd: function () {
-                const allVideos = this.el.querySelectorAll('video');
-                allVideos.forEach(v => {
-                    v.pause();
-                    v.currentTime = 0;
-                });
-                
-                const activeSlide = this.slides[this.activeIndex];
-                const activeVideo = activeSlide.querySelector('video');
-                if (activeVideo) {
-                    this.autoplay.stop();
-                    activeVideo.play().catch(e => console.log('Autoplay prevented:', e));
-                } else {
-                    this.autoplay.start();
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            },
+            on: {
+                init: function () {
+                    // Do not play on init, wait for intersection observer
+                },
+                slideChangeTransitionEnd: function () {
+                    if (!hasStarted) return;
+                    
+                    const allVideos = this.el.querySelectorAll('video');
+                    allVideos.forEach(v => {
+                        v.pause();
+                        v.currentTime = 0;
+                        v.muted = false;
+                    });
+                    
+                    const activeSlide = this.slides[this.activeIndex];
+                    const activeVideo = activeSlide.querySelector('video');
+                    if (activeVideo) {
+                        this.autoplay.stop();
+                        activeVideo.muted = false;
+                        activeVideo.play().catch(e => console.log('Autoplay prevented:', e));
+                    } else {
+                        this.autoplay.start();
+                    }
                 }
             }
-        }
-    });
-
-    const videos = document.querySelectorAll('.testi-swiper video');
-    videos.forEach(video => {
-        video.addEventListener('ended', () => {
-            testiSwiper.slideNext();
-            testiSwiper.autoplay.start();
         });
-    });
-}
+
+        const videos = document.querySelectorAll('.testi-swiper video');
+        videos.forEach(video => {
+            video.addEventListener('ended', () => {
+                testiSwiper.slideNext();
+                testiSwiper.autoplay.start();
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (!hasStarted) {
+                        hasStarted = true;
+                        const activeSlide = testiSwiper.slides[testiSwiper.activeIndex];
+                        const activeVideo = activeSlide.querySelector('video');
+                        if (activeVideo) {
+                            activeVideo.muted = false;
+                            activeVideo.play().catch(e => console.log('Autoplay prevented:', e));
+                        } else {
+                            testiSwiper.autoplay.start();
+                        }
+                    }
+                } else {
+                    const allVideos = testiSwiper.el.querySelectorAll('video');
+                    allVideos.forEach(v => v.pause());
+                    testiSwiper.autoplay.stop();
+                    hasStarted = false;
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(testiSection);
+    }
 });
 
 // Collection Swiper
