@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Cache Busting Meta Tags -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <link rel="icon" type="image/png" href="/Antique-Solapur-Ganeshji-Catalogue/images/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Mangal Murtis - Product Detail</title>
+    <link rel="stylesheet" href="/Antique-Solapur-Ganeshji-Catalogue/style.css?v=1786985896547">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="ann-slides" id="ann-slides">
+            <div class="ann-slide active ann-pink">
+                <span class="ann-text">Door step home delivery available</span>
+            </div>
+            <div class="ann-slide ann-black">
+                <span class="ann-text">Follow us on Instagram & get an 5% discount on your booking</span>
+            </div>
+            <div class="ann-slide ann-black">
+                <span class="ann-text">Reserve your idol with just 30% advance payment</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Product Detail Section -->
+    <section class="product-detail-section">
+        <a href="/Antique-Solapur-Ganeshji-Catalogue/index.html" class="back-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </a>
+        <div class="product-media-slider-container">
+
+            <div class="product-media-slider" id="product-media-slider">
+                <!-- Slides will be injected here -->
+            </div>
+            <button class="media-arrow media-prev" onclick="scrollMedia(-1)">&#10094;</button>
+            <button class="media-arrow media-next" onclick="scrollMedia(1)">&#10095;</button>
+            <div class="media-dots" id="media-dots"></div>
+        </div>
+        <div class="product-info">
+            <div class="product-title-row">
+                <h1 id="product-title">Loading...</h1>
+                <button class="share-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                </button>
+            </div>
+
+            <div class="price-row-detail" style="margin-bottom: 10px; display: none; align-items: baseline; gap: 10px;">
+                <span id="product-original-price" style="font-size: 1.4rem; text-decoration: line-through; color: #555; font-weight: 600;"></span>
+                <span id="product-price" style="font-size: 2.2rem; font-weight: 800; color: #e91e63;">Loading...</span>
+            </div>
+            
+            <div class="size-row-detail" style="margin-bottom: 5px;">
+                <span class="product-size" id="product-size" style="color: #e91e63; font-weight: 700; font-size: 1rem;">Size: 2.5 Feet</span>
+            </div>
+            
+            <p id="product-code" class="product-code-detail" style="font-size: 1.2rem; font-weight: 600; margin-bottom: 15px;">Code: Loading...</p>
+
+            <div class="timer-badge">
+                Hurry Up, Shop Now! <span id="countdown-timer">⏱ Loading...</span>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="trust-icons-row">
+                    <div class="trust-item">
+                        <div class="trust-icon">🏺</div>
+                        <p>Authentic Solapur Collection</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">✨</div>
+                        <p>Exclusive Kundan & Dhoti Work</p>
+                    </div>
+                    <div class="trust-item">
+                        <div class="trust-icon">🏺</div>
+                        <p>Secure & Safe Packaging</p>
+                    </div>
+                </div>
+                <div class="delivery-time">
+                    Door step home delivery available
+                </div>
+            </div>
+
+            <a href="#" id="whatsapp-btn" class="whatsapp-btn-large" target="_blank" rel="noopener noreferrer">
+                <svg class="whatsapp-icon" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                </svg>
+                Book Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Instagram Banner -->
+    <section class="insta-banner">
+        <div class="insta-content">
+            <svg class="insta-icon" viewBox="0 0 24 24" fill="currentColor" style="color: #e91e63;">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+            <h2>FOLLOW US ON<br>INSTAGRAM</h2>
+            <p>Get exclusive updates and <strong>5% OFF</strong> your first traditional Ganesha idol.</p>
+            <a href="https://www.instagram.com/divmangalmurtis?igsh=MTRsZGJ5YWRyZ24xeQ==" target="_blank" class="insta-outline-btn">
+                FOLLOW<br>@DIVMANGALMURTIS
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <img src="/Antique-Solapur-Ganeshji-Catalogue/images/logo.png" alt="Div Mangal Murtis" class="footer-logo">
+                <p class="footer-desc">Bringing traditional artistry and eco-friendly devotion directly to your home.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/Antique-Solapur-Ganeshji-Catalogue/index.html">Home</a></li>
+                    <li><a href="/Antique-Solapur-Ganeshji-Catalogue/index.html">Shop Idols</a></li>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="/Antique-Solapur-Ganeshji-Catalogue/terms.html">Terms and Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <p>📞 +91 8792030203</p>
+                <p>✉️ Divmangalmurtis@gmail.com</p>
+                <p>📍 Solapur and Bengaluru, India.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Div Mangal Murtis | Made with ❤️ by Regortz</p>
+        </div>
+    </footer>
+
+    <script src="/Antique-Solapur-Ganeshji-Catalogue/products.js?v=1786985896547"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            let productId = "laddu-gopal-2";
+
+            // Default to first product if none specified
+            if (!productId) {
+                productId = 'balaji-ganesha';
+            }
+
+            const product = products.find(p => p.id === productId);
+
+            if (product) {
+                document.title = `${product.title} - Div Mangal Murtis`;
+                document.getElementById('product-title').innerText = product.title;
+                document.getElementById('product-code').innerText = 'Code: ' + (product.code || '');
+                document.getElementById('product-size').innerText = 'Size: ' + (product.size || '');
+                if (document.getElementById('product-price')) {
+                    document.getElementById('product-price').innerText = product.price || '';
+                }
+                if (document.getElementById('product-original-price')) {
+                    document.getElementById('product-original-price').innerText = product.originalPrice || '';
+                }
+                const slider = document.getElementById('product-media-slider');
+                const dotsContainer = document.getElementById('media-dots');
+                
+                if (slider && dotsContainer) {
+                    slider.innerHTML = '';
+                    dotsContainer.innerHTML = '';
+                    
+                    let mediaItems = [];
+                    if (product.images && product.images.length > 0) {
+                        mediaItems = [...product.images];
+                    } else if (product.image) {
+                        mediaItems = [product.image];
+                    }
+                    if (product.videos && product.videos.length > 0) {
+                        mediaItems = [...mediaItems, ...product.videos];
+                    }
+
+                    mediaItems.forEach((src, index) => {
+                        const slide = document.createElement('div');
+                        slide.className = 'media-slide';
+                        
+                        if (src.toLowerCase().endsWith('.mp4')) {
+                            const video = document.createElement('video');
+                            video.src = '/Antique-Solapur-Ganeshji-Catalogue/' + src;
+                            video.playsInline = true;
+                            video.loop = true;
+                            slide.appendChild(video);
+                        } else {
+                            const img = document.createElement('img');
+                            img.src = '/Antique-Solapur-Ganeshji-Catalogue/' + src;
+                            img.alt = product.title;
+                            slide.appendChild(img);
+                        }
+                        slider.appendChild(slide);
+
+                        const dot = document.createElement('span');
+                        dot.className = 'media-dot' + (index === 0 ? ' active' : '');
+                        dot.onclick = () => {
+                            slider.scrollTo({
+                                left: slide.offsetLeft,
+                                behavior: 'smooth'
+                            });
+                        };
+                        dotsContainer.appendChild(dot);
+                    });
+
+                    // Update dots and videos on scroll
+                    const updateSliderState = () => {
+                        const slideWidth = slider.clientWidth;
+                        const scrollPosition = slider.scrollLeft;
+                        const activeIndex = Math.round(scrollPosition / slideWidth);
+                        
+                        const dots = dotsContainer.querySelectorAll('.media-dot');
+                        dots.forEach((dot, i) => {
+                            dot.classList.toggle('active', i === activeIndex);
+                        });
+
+                        const slides = slider.querySelectorAll('.media-slide');
+                        slides.forEach((slide, i) => {
+                            const video = slide.querySelector('video');
+                            if (video) {
+                                if (i === activeIndex) {
+                                    video.play().catch(e => console.log('Autoplay blocked:', e));
+                                } else {
+                                    video.pause();
+                                }
+                            }
+                        });
+                    };
+
+                    slider.addEventListener('scroll', updateSliderState);
+                    
+                    // Trigger initially to handle first slide
+                    setTimeout(updateSliderState, 100);
+                }
+
+                const waMessage = `Hello, I would like to book the ${product.title}, Size: ${product.size}, Code: ${product.code}.`;
+                document.getElementById('whatsapp-btn').href = `https://wa.me/918792030203?text=${encodeURIComponent(waMessage)}`;
+
+                // Update videos if available
+                if (product.videos && product.videos.length > 0) {
+                    const videoTags = document.querySelectorAll('.review-slide video');
+                    product.videos.forEach((vidSrc, i) => {
+                        if (videoTags[i]) {
+                            videoTags[i].src = '/Antique-Solapur-Ganeshji-Catalogue/' + vidSrc;
+                        }
+                    });
+                }
+            } else {
+                document.getElementById('product-title').innerText = 'Product not found';
+            }
+        });
+    </script>
+    <script>
+        // Working Countdown Timer — resets every 24h
+        function startCountdown() {
+            const timerEl = document.getElementById('countdown-timer');
+            const storageKey = 'timerEndTime';
+            let endTime = localStorage.getItem(storageKey);
+
+            if (!endTime || Date.now() > parseInt(endTime)) {
+                // Set a new 8-hour timer
+                endTime = Date.now() + 8 * 60 * 60 * 1000;
+                localStorage.setItem(storageKey, endTime);
+            }
+
+            function update() {
+                const remaining = parseInt(endTime) - Date.now();
+                if (remaining <= 0) {
+                    // Reset timer
+                    endTime = Date.now() + 8 * 60 * 60 * 1000;
+                    localStorage.setItem(storageKey, endTime);
+                }
+                const h = Math.floor(remaining / 3600000).toString().padStart(2, '0');
+                const m = Math.floor((remaining % 3600000) / 60000).toString().padStart(2, '0');
+                const s = Math.floor((remaining % 60000) / 1000).toString().padStart(2, '0');
+                if (timerEl) timerEl.innerText = `⏱ ${h}H:${m}M:${s}S`;
+            }
+
+            update();
+            setInterval(update, 1000);
+        }
+
+        startCountdown();
+
+        // Review Carousel with Auto-slide based on Video Completion
+        let currentReview = 0;
+        const slides = document.querySelectorAll('.review-slide');
+        const dots = document.querySelectorAll('.review-dot');
+
+        function goToReview(index) {
+            // Stop current video
+            const currentVideo = slides[currentReview].querySelector('video');
+            if (currentVideo) {
+                currentVideo.pause();
+                currentVideo.currentTime = 0;
+            }
+
+            slides[currentReview].classList.remove('active');
+            dots[currentReview].classList.remove('active');
+            
+            currentReview = (index + slides.length) % slides.length;
+            
+            slides[currentReview].classList.add('active');
+            dots[currentReview].classList.add('active');
+
+            // Play new video
+            const newVideo = slides[currentReview].querySelector('video');
+            if (newVideo) {
+                newVideo.currentTime = 0;
+                newVideo.play().catch(e => console.log('Autoplay blocked:', e));
+            }
+        }
+
+        function changeReview(dir) {
+            goToReview(currentReview + dir);
+        }
+
+        // Listen for video end to trigger auto-scroll
+        if (slides.length > 0) {
+            slides.forEach(slide => {
+                const video = slide.querySelector('video');
+                if (video) {
+                    // Remove loop attribute just in case it was missed in HTML
+                    video.removeAttribute('loop');
+                    video.addEventListener('ended', () => {
+                        changeReview(1);
+                    });
+                }
+            });
+            // IntersectionObserver to play/pause videos based on visibility
+            const videoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target;
+                    const slide = video.closest('.review-slide');
+                    // Play if it's visible and is the active slide, otherwise pause
+                    if (entry.isIntersecting && slide && slide.classList.contains('active')) {
+                        video.play().catch(e => console.log('Autoplay blocked:', e));
+                    } else {
+                        video.pause();
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            slides.forEach(slide => {
+                const video = slide.querySelector('video');
+                if (video) {
+                    videoObserver.observe(video);
+                }
+            });
+        }
+
+        // Touch swipe support for reviews
+        const reviewCarousel = document.getElementById('review-carousel');
+        if (reviewCarousel) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            reviewCarousel.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, {passive: true});
+            
+            reviewCarousel.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    changeReview(1); // Swiped left -> next
+                }
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    changeReview(-1); // Swiped right -> prev
+                }
+            }
+        }
+
+        // Media Slider Scroll Function
+        function scrollMedia(dir) {
+            const slider = document.getElementById('product-media-slider');
+            if (slider) {
+                const slideWidth = slider.clientWidth;
+                slider.scrollBy({ left: dir * slideWidth, behavior: 'smooth' });
+            }
+        }
+    </script>
+<script src="/Antique-Solapur-Ganeshji-Catalogue/script.js?v=1786985896547"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<IfModule mod_headers.c>
+    # 1. NEVER CACHE HTML FILES (Forces iPhones/Safari to always fetch the latest version)
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </FilesMatch>
+
+    # 2. CACHE ASSETS (Since we use ?v= numbers for JS/CSS, it's safe to cache them to make the site load fast)
+    <FilesMatch "\.(js|css|png|jpg|jpeg|gif|svg|ico|mp4)$">
+        Header set Cache-Control "max-age=31536000, public"
+    </FilesMatch>
+</IfModule>
